@@ -1,0 +1,14 @@
+.time-configurator-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.time-configurator-container .minutes-control,
+.time-configurator-container .seconds-control {
+    width: 45%;
+}
+
+.time-configurator-container {
+    margin-bottom: 20px;
+}

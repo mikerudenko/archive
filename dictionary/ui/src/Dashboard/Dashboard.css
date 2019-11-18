@@ -1,0 +1,11 @@
+@media print {
+  .pagination,
+  .action-bar-container,
+  .app-header,
+  .data-grid-container table th:nth-of-type(5),
+  .data-grid-container table td:nth-of-type(5),
+  .data-grid-container table th:nth-of-type(6),
+  .data-grid-container table td:nth-of-type(6) {
+    display: none;
+  }
+}

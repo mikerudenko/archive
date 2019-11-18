@@ -1,0 +1,19 @@
+.app-menu-item {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px;
+    transition: .5s;
+}
+
+.app-menu-item:hover {
+    color: #607d8b;
+}
+
+.bitcoin-sign {
+    font-size: 30px;
+}
+
+.app-menu-bar {
+    background-color: #00B0FF !important;
+}

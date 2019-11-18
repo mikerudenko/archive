@@ -1,0 +1,30 @@
+.data-uploader-container {
+    width: 660px;
+    min-height: 480px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.data-uploader-container input[type=file] {
+    display: none;
+}
+
+.data-uploader-container {
+    display: flex;
+    justify-content: center;
+}
+
+.data-uploader-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+span.start-quiz-btn {
+    background-color: #8bc34a;
+}

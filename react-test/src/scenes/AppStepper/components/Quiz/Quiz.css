@@ -1,0 +1,51 @@
+.app-test-form {
+    min-height: 480px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: none !important;
+}
+
+.app-test-form-question-title {
+    text-align: center;
+}
+
+.app-form-buttons-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 25px;
+}
+
+.app-form-buttons-block button {
+    margin-right: 50px;
+}
+
+.app-test-form__main-content {
+    height: 280px;
+    overflow-y: auto;
+}
+
+.app-test-form__main-content,
+.app-test-form__bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app-test-form__bottom-content {
+    padding-top: 45px;
+}
+
+.answer-btn {
+    background-color: #4CAF50 !important;
+}
+
+.skip-btn {
+    background-color: #00BCD4 !important;
+}
+
+button.answer-btn,
+button.skip-btn,
+button.finish-btn {
+    width: 180px;
+}

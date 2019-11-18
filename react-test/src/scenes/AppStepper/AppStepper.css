@@ -1,0 +1,10 @@
+.app-stepper {
+    width: 660px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 50px auto 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}

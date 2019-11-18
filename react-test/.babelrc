@@ -1,0 +1,37 @@
+{
+  "sourceMaps": true,
+  "presets": [
+    "stage-0",
+    "es2015",
+    "react",
+    "env"
+  ],
+  "plugins": [
+    "transform-object-rest-spread",
+    "react-hot-loader/babel",
+    "add-module-exports",
+    "transform-class-properties",
+    "transform-decorators-legacy",
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        "react-optimize"
+      ]
+    },
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    },
+    "targets": {
+      "browsers": [
+        "last 2 versions"
+      ]
+    }
+  }
+}

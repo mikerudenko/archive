@@ -1,0 +1,147 @@
+@charset "UTF-8";
+.notification > .notification-element {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.notification-element .notification-text {
+  word-break: break-all;
+  hyphens: auto;
+}
+
+.notification > .notification-bell {
+  padding-left: 5px;
+  width: 5%;
+}
+
+.notification > .notification-text {
+  padding-left: 10px;
+}
+
+[class*='core-icon-']:before {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+/*Code that we need*/
+@-webkit-keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transition-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  100% {
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInX {
+  0% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transition-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  100% {
+    transform: perspective(400px);
+  }
+}
+
+.flipInX {
+  backface-visibility: visible !important;
+  animation-name: flipInX;
+}
+
+@-webkit-keyframes flipOutX {
+  0% {
+    transform: perspective(400px);
+  }
+
+  30% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+
+.flipOutX {
+  animation-name: flipOutX;
+  animation-duration: .75s;
+  backface-visibility: visible !important;
+}
+
+.xircl-alerts {
+  position: fixed;
+  width: 270px;
+  top: 6em;
+  left: calc(50% - 250px / 2);
+  z-index: 9999;
+}
+
+@media (min-width: 768px) and (max-width: 1113px) {
+  /* drop as soon as VoC Monitoring fix overlaped navbar */
+  .xircl-alerts {
+    top: 12em;
+  }
+}
+
+@media (min-width: 1680px) {
+  /* above 1680px notification wider than 250px wide notification */
+  .xircl-alerts {
+    right: 5px;
+    left: auto;
+    width: calc((100% - 1170px) / 2); /* 1170px is a width of bootstrap container */
+  }
+}

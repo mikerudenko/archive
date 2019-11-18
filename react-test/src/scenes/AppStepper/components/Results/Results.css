@@ -1,0 +1,68 @@
+.app-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 480px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.star-ratings {
+    margin-top: 20px;
+}
+
+.social-share-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 84%;
+}
+
+.social-share-block > div {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.questions-block {
+    height: 230px;
+    margin-top: 20px;
+    width: 80%;
+    overflow-y: auto;
+    border: 2px dashed brown;
+    padding: 10px;
+}
+
+.results-question-item {
+    width: 100%;
+    display: flex !important;
+    align-items: flex-start;
+    justify-content: flex-start;
+    line-height: 35px !important;
+}
+
+.results-question-item .results-question-item-title {
+    padding-left: 10px;
+}
+
+.correct-icon {
+    color: #0ead21;
+}
+
+.failed-icon {
+    color: #aa080f
+}
+
+.results-bottom-block {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
+    width: 84%;
+}
+
+.play-quiz-btn {
+    width: 250px;
+}

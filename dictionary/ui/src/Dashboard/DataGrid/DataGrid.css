@@ -1,0 +1,21 @@
+div.data-grid-container {
+  width: 1024px;
+  margin: 20px auto;
+}
+
+.pagination {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button.grid-action {
+  margin-right: 10px;
+}

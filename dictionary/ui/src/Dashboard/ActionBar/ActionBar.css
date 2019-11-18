@@ -1,0 +1,41 @@
+.tags-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.action-bar-container {
+  width: 1024px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filter-data-section {
+  width: 85%;
+}
+
+.add-resource-buttons {
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.another-actions {
+  width: 300px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-left: auto;
+}
+
+.another-actions > div {
+  margin-left: 10px;
+}
+
+@media print {
+  .action-bar-container {
+    display: none;
+  }
+}
