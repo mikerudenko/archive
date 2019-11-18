@@ -1,0 +1,29 @@
+Datas segment
+	String db "minzdrav poperedzhae kyrinnya shkidlyve dlya zdorovya moje viklikati zahvoryuvannya na rak ",0dh,0ah,'$'
+Datas ends
+Codes segment
+	Assume cs:Codes,ds:Datas
+First:	mov ax, Datas
+	mov ds, ax
+
+	mov ah, 40h
+	mov bx, 1
+	mov cx, 93
+	mov dx, offset String
+	int 21h
+
+	mov String, 'M'
+	mov String+20, ':'
+	mov String+53, '.'
+	mov String+54, 'M'
+	mov String+90, '.'
+
+	mov ah, 40h
+	int 21h
+	mov ax, 4c00h
+	int 21h
+Codes ends
+stk segment stack
+	db 256 dup(0)
+stk ends
+end First

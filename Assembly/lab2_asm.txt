@@ -1,0 +1,60 @@
+	segment CODE byte public
+
+	assume cs:CODE
+
+	public Sradd
+	proc Sradd near
+	
+	push bp
+	mov bp, sp
+	push ds
+	push cx
+	push bx
+	push dx
+	xor dx, dx
+	xor bx, bx
+
+
+	mov bx, offset [bp+12]		; the first item of second array
+	lds di, dword ptr[bp+4]		; bp->ds, 4->di, adress of resulting array
+	
+	mov cx,12					; 12 -capasity of arrays
+
+	M1:
+	
+	mov ax,[bx];b1
+	mov ds:[di],ax; ds->b1...b12
+	add di,2					
+	add bx,2
+
+	loop M1
+	;--------------
+	xor bx,bx
+	
+	mov bx, offset[bp+8];a1
+	lds di, dword ptr[bp+4]		; to the start of resulting array
+	mov cx,12 ; 	
+	
+
+	M2:	
+	
+	mov ax,[bx];b1
+	imul ds:[di]; ds->+b1...+b12
+	mov ds:[di],ax
+	add di,2					
+	add bx,2
+
+	loop M2
+
+	
+	pop dx
+	pop bx
+	pop cx
+	pop ds
+	pop bp
+	ret
+
+endp Sradd 
+
+ends Code
+end

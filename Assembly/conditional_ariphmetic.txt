@@ -1,0 +1,94 @@
+; a>b  a/b+1
+; a=b -2
+; a<b (a-b)/a
+
+.MODEL small
+.Stack 100h
+Datas segment 
+	a dw 5
+	b dw 1
+	x dw ? 
+	h dw ?
+	xm dw ?
+	mess db 'Error! Division by zero.$'
+Datas ends
+
+Codes segment 
+	Assume cs:Codes, ds:Datas
+First:	mov ax, Datas
+	mov ds, ax
+
+	mov ax, a;
+	cmp ax, b;
+	jg @greater
+	jl @less
+
+	;a==b
+	;x = -2
+	xor ax, ax
+	mov ax, -2
+	mov x, ax
+	jmp @otv
+
+	;a>b
+	;x = a/b+1
+@greater:
+	xor ax, ax
+	cmp b, 0
+	je @err
+	mov ax, a
+	cwd
+	idiv b
+	add ax, 1
+	mov x, ax
+	jmp @otv
+
+	;a<b
+	;x = (a-b)/a
+@less:	xor ax, ax
+	cmp a, 0
+	je @err
+	mov ax, a
+	sbb ax, b
+	cwd
+	idiv a
+	mov x, ax
+	jmp @otv
+
+@otv:	xor ax, ax
+	mov ax, x
+	push ax
+	cmp ax, 0
+	jns @plus ;если знак плюс (знаковый (старший) бит результата равен 0)
+
+	mov dl, '-'
+	mov ah, 02h
+	int 21h
+	pop ax
+	neg ax
+
+@plus:	xor cx, cx
+	mov bx, 10
+
+@dvsn:	xor dx, dx
+	div bx
+	push dx
+	inc cx
+	test ax, ax
+	jnz short @dvsn ;если нет нуля
+	mov ah, 02h
+
+@vivod: pop dx
+	add dl, 30h ; +30
+	int 21h
+	loop @vivod
+	jmp @end
+
+@err:	mov dx, offset mess
+	mov ah, 09h
+	int 21h
+
+@end:	mov ax, 4c00h
+	int 21h
+Codes ends
+end First

@@ -1,0 +1,35 @@
+{$L pruglo_l2.obj}
+uses crt;
+const n = 12;
+type tMas = array [1..n] of integer;
+var a, b, res: tMas;
+
+function sradd(arr1:tMas; arr2:tMas; var arr:tMas):integer; external;
+
+procedure init;
+var i: integer;
+begin
+    Writeln('Task:');
+    Writeln('Every element of array is the difference between elements');
+    Writeln;
+    Write('Input array a: ');
+    for i := 1 to number do Read(a[i]);
+    Writeln;
+    Write('Input array b: ');
+    for i := 1 to number do Read(b[i]);
+    Writeln;    
+end;
+
+procedure output;
+var i:integer;
+begin
+    for i:=1 to number do Write(c[i],' ');
+    Writeln;
+end;
+
+begin
+  ClrScr;
+  init;
+  sradd(a, b, res);
+  output;
+end.

@@ -1,0 +1,6 @@
+main([X|Xs],Ld,[X|Lv]):-
+        X<0,!,
+	main(Xs,Ld,Lv).
+main([X|Xs],[X|Ld],Lv):-
+	main(Xs,Ld,Lv).
+main([], [], []).

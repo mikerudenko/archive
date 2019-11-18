@@ -1,0 +1,32 @@
+% +list1, +list2, +list3, -list
+main(L1, L2, L3, L):-
+	length(L1,N1),
+	length(L2,N2),
+	length(L3,N3),
+	K is N1//3+1,
+	K2 is N2//3+1,
+	K3 is N2//3*2+1,
+	K4 is N3//3*2+1,
+	K5 is N3 + 1,
+	part(L1,1,1,K,Part1),
+	part(L2,1,K2,K3,Part2),
+	part(L3,1,K4,K5,Part3),
+	append(Part1, Part2, L4),
+	append(L4, Part3, L).
+
+% +list, +counter, #first item of part
+% #last item of part, -part
+part([_|List], I, K2, K3, Res) :-
+	I < K2,
+	I1 is I + 1,
+	part(List, I1, K2, K3, Res).
+part([X|List], I, K2, K3, [X|Res]) :-
+	I >= K2,
+	I < K3,
+	I1 is I + 1,
+	part(List, I1, K2, K3, Res).
+part(_,K3,_,K3,[]).
+
+
+
+

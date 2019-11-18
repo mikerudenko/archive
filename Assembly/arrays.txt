@@ -1,0 +1,74 @@
+//Задано лінійний масив А, який містить парну кількість елементів.
+ Створити масив В, елементи якого буде утворено за схемою: перший є сумою перших двох елементів масиву А, другий – сумою – третього і четвертого і так до кінця
+init macro
+        mov ax, @data
+        mov ds, ax
+endm
+
+exit macro
+        mov ax, 4c00h
+        int 21h
+endm
+
+task macro
+local initm
+        mov si, 0
+        mov di, 0
+
+initm:  xor ax, ax
+        add ah, mas1[si]
+        inc si
+        add ah, mas1[si]
+        mov mas2[di], ah
+
+        inc si
+        inc di
+        cmp di, 4
+        jne initm
+endm
+
+outp macro mas, count
+local show, digits, output
+        mov si, 0
+show:   xor ax, ax
+        mov al, mas[si]
+        mov bx, 10
+        xor cx, cx
+
+digits:	xor dx, dx
+        div bx
+        push dx
+        inc cx
+        test ax, ax
+        jnz digits
+        mov ah, 02h
+
+output: pop dx
+        add dl, 30h
+        int 21h
+        loop output
+        mov dl, 32
+        int 21h
+
+        inc si
+        cmp si,count
+        jne show
+
+        mov dl, 13
+        int 21h
+        mov dl, 10
+        int 21h
+endm
+
+.model small
+.stack 100h
+.data
+        mas1 db 10,2,5,6,7,3,17,15
+        mas2 db 4 dup(0)
+.code
+first:	init
+        task
+        outp mas1, 8
+        outp mas2, 4
+        exit
+end first

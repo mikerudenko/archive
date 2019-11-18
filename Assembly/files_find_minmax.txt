@@ -1,0 +1,82 @@
+.model small
+.data
+	filename db "lab5.txt", 0
+	handle dw ?
+	count dw 13
+	min db ?
+	max db ?
+	temp db	13 dup (0), 0Ah, 0Dh, "$"
+	maxText db "Maximum value = $"
+	minText db "Minimum value = $"
+	text db "Array: $"
+	nextLine db 0Ah, 0Dh, "$"
+	errText db "Error file opening$"
+.code
+	mov ax, @data
+	mov ds, ax
+	
+	mov ax, 3D00h
+	mov dx, offset filename
+	int 21h
+	jc er
+	
+	mov handle, ax
+
+	mov ah, 3Fh
+	mov bx, handle
+	mov cx, count
+	mov dx, offset temp
+	int 21h
+	
+	mov ah, 09h
+	mov dx, offset text
+	int 21h
+	mov ah, 09h
+	mov dx, offset temp
+	int 21h
+	
+	mov al, temp[0]
+	mov max, al
+	mov min, al
+		
+	mov si, 2
+	mov cx, 6
+	cycle:
+		mov al, temp[si]
+		cmp al, max
+		jng cont
+		mov max, al
+		cont:
+		cmp al, min
+		jnl cont2
+		mov min, al
+		cont2:
+		add si, 2
+	loop cycle
+	
+	mov ah, 09h
+	mov dx, offset minText
+	int 21h
+	mov ah, 02h
+	mov dl, min
+	int 21h
+	
+	mov ah, 09h
+	mov dx, offset nextLine
+	int 21h
+	
+	mov ah, 09h
+	mov dx, offset maxText
+	int 21h
+	mov ah, 02h
+	mov dl, max
+	int 21h
+	jmp exit
+	er:
+		mov ah, 09h
+		mov dx, offset errText
+		int 21h
+	exit:
+		mov ax, 4C00h
+		int 21h
+end

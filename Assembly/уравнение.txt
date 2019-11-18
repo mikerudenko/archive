@@ -1,0 +1,94 @@
+;z=(4*c-d/2+23)/(a*a-1)
+.MODEL small
+.Stack 100h
+Datas segment 
+	a dw 2
+	c dw 2
+	d dw 2
+	z dw ? 
+	h dw ?
+	znam dw ?
+	mess db 'Error! Division by zero.$'
+Datas ends
+
+Codes segment 
+	Assume cs:Codes, ds:Datas
+First:	mov ax, Datas
+	mov ds, ax
+
+	;a*a
+	mov ax, a
+	cwd
+	imul a
+
+	;if a == 1 => divide by zero => error
+	cmp ax, 1
+	je @err
+	
+	;(a*a)-1
+	mov h, 1
+	sbb ax, h
+	mov znam, ax
+
+	;4*c
+	mov h, 4
+	mov ax, c
+	imul h
+	mov z, ax
+
+	;d/2
+	mov h, 2
+	mov ax, d
+	cwd
+	idiv h
+
+	;(4*c)-(d/2)
+	sbb z, ax
+
+	;(4*c-d/2)+23
+	mov ax, z
+	mov h, 23
+	adc ax, h
+
+	;(4*c-d/2+23) / (znam)
+	cwd
+	idiv znam
+	mov z, ax
+
+	xor ax, ax
+	mov ax, z
+	push ax
+	cmp ax, 0
+	jns @plus ;если знак плюс (знаковый (старший) бит результата равен 0)
+
+	mov dl, '-'
+	mov ah, 02h ;вивод
+	int 21h
+	pop ax
+	neg ax
+
+@plus:	xor cx, cx
+	mov bx, 10
+
+@dvsn:	xor dx, dx
+	div bx
+	push dx
+	inc cx
+	test ax, ax
+	jnz short @dvsn ;если нет нуля
+	mov ah, 02h
+
+@vivod: pop dx
+	add dl, 30h ; +30
+	int 21h
+	loop @vivod
+	jmp @end
+
+@err:	mov dx, offset mess
+	mov ah, 09h
+	int 21h
+
+@end:	mov ax, 4c00h
+	int 21h
+Codes ends
+end First

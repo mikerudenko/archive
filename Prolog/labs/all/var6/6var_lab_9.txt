@@ -1,0 +1,15 @@
+dictionary(h).
+dictionary(i).
+dictionary(j).
+dictionary(k).
+dictionary(l).
+dictionary(m).
+dictionary(n).
+
+%+Source list -Result List
+main([X | Xs], Ys) :-
+   dictionary(X), !,
+   main(Xs, Ys).
+main([X | Xs], [X | Ys]) :-
+   main(Xs, Ys).
+main([], []).

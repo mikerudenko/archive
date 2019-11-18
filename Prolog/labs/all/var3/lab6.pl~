@@ -1,0 +1,12 @@
+% +List, -NewList
+main(L1,L2):-
+	length(L1,N),
+	K3 is N//3*2+1,
+	parts(L1,1,K3,L2).
+
+% +List, +Counter, #first item of the third part, -Part
+parts([X|Xs],I,K3,[X|Part]):-
+	I<K3,
+	I1 is I+1,
+	parts(Xs,I1,K3,Part).
+parts(_,K3,K3,[]).

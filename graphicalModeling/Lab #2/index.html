@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Test</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			html, body {
+				color: #000;
+				font-family:Monospace;
+				font-size:13px;
+				text-align:center;
+				font-weight: bold;
+				height: 100%;
+
+				background-color: #fff;
+				margin: 0;
+				overflow: hidden;
+			}
+
+			#info {
+				color:#000;
+				position: absolute;
+				top: 0px; width: calc(100% - 300px);
+				padding: 5px;
+			}
+
+			#sidebar {
+				float: right;
+				width: 300px;
+				height: 100%;
+			}
+			
+			#sidebar > img {
+				margin: 10px;
+				width: 280px;
+			}
+			
+			#container {
+				margin-right: 300px;
+				height: 100%;
+			}
+			
+			.option {
+				text-align: left;
+				padding: 15px;
+			}
+			
+			.option label {
+				display: block;
+			}
+			
+			.option input[type=number] {
+				vertical-align: middle;
+				width: 30px;
+                -moz-appearance: textfield;
+			}
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+			
+			.option .label {
+				display: inline-block;
+				width: 20px;
+			}
+		</style>
+	</head>
+
+	<body onload="start();">
+		<div id="sidebar">
+			<h2>Task</h2>
+            <p>
+                Знайти відстань від точки до площини, заданої в лінійному векторно-параметричному
+                вигляді.
+            </p>
+			<div class="option">
+				A: (<input type="number" value="-1"/>, <input type="number" value="4"/>, <input type="number" value="2"/>)
+			</div>
+			<div class="option">
+				<div>r = r<sub>0</sub>(1-u-v) + r<sub>1</sub>u + r<sub>2</sub>v</div>
+                <div>r<sub>0</sub>: (<input type="number" value="0"/>, <input type="number" value="0"/>, <input type="number" value="0"/>)</div>
+                <div>r<sub>1</sub>: (<input type="number" value="0"/>, <input type="number" value="2"/>, <input type="number" value="0"/>)</div>
+                <div>r<sub>2</sub>: (<input type="number" value="3"/>, <input type="number" value="-2"/>, <input type="number" value="-5"/>)</div>
+			</div>
+            <div id="result"></div>
+		</div>
+		<div id="container">
+		
+		</div>
+		<div id="info">
+			Variant #15 - Nikita Savchenko. Using <a href="http://threejs.org" target="_blank">three.js</a> library.
+		</div>
+
+		<script src="js/Detector.js"></script>
+		<script src="js/three.min.js"></script>
+		<script src="js/ThreeCSG.js"></script>
+		<script src="js/OrbitControls.js"></script>
+
+		<script>function start () {
+
+            if (!Detector.webgl) Detector.addGetWebGLMessage(); // check if WebGL is supported
+
+            var container, camera, controls, scene, renderer, hemiLight, dirLight, material,
+                    WIDTH = 0, HEIGHT = 0;
+
+            function updateSizes() {
+                var rect = document.getElementById("container").getBoundingClientRect();
+                WIDTH = rect.width;
+                HEIGHT = rect.height;
+            }
+
+            function append (text) {
+                document.getElementById("result").innerHTML += "<div>" + (text || "<br/>") + "</div>";
+            }
+            function rounds (n, noSign) {
+                return (!noSign ? (n < 0 ? "- " : "+ ") : "") + Math.round((!noSign ? Math.abs(n) : n)*100)/100;
+            }
+
+            var inputs = [].slice.call(document.getElementById("sidebar").getElementsByTagName("input"));
+
+            // initialize in the line
+            updateSizes();
+            init();
+
+            function init() {
+
+                var vals = [];
+                var A, B, C, D, // canonical surface
+                    dx1, dy1, dz1, dx2, dy2, dz2,
+                    d;
+
+                inputs.forEach(function (i) {
+                    i.addEventListener("input", count);
+                    vals.push(parseFloat(i.value) || 0);
+                });
+
+                function count() {
+
+                    document.getElementById("result").innerHTML = "";
+                    vals = [];
+                    inputs.forEach(function (i) {
+                        vals.push(parseFloat(i.value) || 0);
+                    });
+
+                    dx1 = vals[6] - vals[3]; dy1 = vals[7] - vals[4]; dz1 = vals[8] - vals[5];
+                    dx2 = vals[9] - vals[3]; dy2 = vals[10] - vals[4]; dz2 = vals[11] - vals[5];
+                    A = dy1*dz2 - dz1*dy2; B = dx1*dz2 - dz1*dx2; C = dx1*dy2 - dy1*dx2;
+                    D = -(A*vals[3] - B*vals[4] - C*vals[5]);
+                    d = Math.abs(A*vals[0] + B*vals[1] + C*vals[2] + D)/Math.sqrt(A*A + B*B + C*C);
+
+                    append("Surface: " + rounds(A) + "x " + rounds(B) + "y " +  rounds(C) + "z " + rounds(D) + " = 0");
+                    append("Distance A <-> Surface: " + rounds(d, 1));
+
+                    updateScene();
+
+                }
+
+                /////////////////////////////
+
+                //-----------------------------Three.js scene setup-------------------------------\\
+                camera = new THREE.PerspectiveCamera(60, WIDTH / HEIGHT, 1, 1000);
+                camera.position.z = 500;
+                controls = new THREE.OrbitControls(camera, document.getElementById("container"));
+                controls.damping = 0.2;
+                controls.zoom = 2;
+                console.log(controls);
+                controls.addEventListener('change', render);
+                scene = new THREE.Scene();
+                material = new THREE.MeshLambertMaterial({ // object's surface
+                    color: 0xffffff,
+                    shading: THREE.FlatShading
+                });
+
+                hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.6);
+                hemiLight.color.setHSL(0.6, 1, 0.6);
+                hemiLight.groundColor.setHSL(1, 1, 1);
+                hemiLight.position.set(0, 500, 0);
+                scene.add(hemiLight);
+                dirLight = new THREE.DirectionalLight(0xffffff, 1);
+                dirLight.color.setHSL(1, 1, 1);
+                dirLight.position.set(-1, 1.75, 1);
+                dirLight.position.multiplyScalar(50);
+                scene.add(dirLight);
+
+                renderer = new THREE.WebGLRenderer({antialias: false});
+                renderer.setClearColor(0xcccccc);
+                renderer.setPixelRatio(window.devicePixelRatio);
+                renderer.setSize(WIDTH, HEIGHT);
+                //scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
+                //--------------------------------------------------------------------------------\\
+
+                var graphMesh;
+                function createGraph()
+                {
+                    var uMax = 5, uMin = -5, vMax = 5, vMin = -5, uRange, vRange, xFunc, yFunc, zFunc,
+                        segments = 8, graphGeometry, zMin, zMax, zRange, xMin, xMax, yMin, yMax;
+                    uRange = uMax - uMin;
+                    vRange = vMax - vMin;
+                    var meshFunction = function(u0, v0)
+                    {
+                        var xx = uRange * u0 + uMin;
+                        var yy = vRange * v0 + vMin;
+                        var x = xx;//xFunc(u,v);
+                        var y = yy;//yFunc(u,v);
+                        var z = (A*xx + B*yy + D)/C;//zFunc(u,v);
+                        if ( isNaN(x) || isNaN(y) || isNaN(z) )
+                            return new THREE.Vector3(0,0,0); // TODO: better fix
+                        else
+                            return new THREE.Vector3(x, y, z);
+                    };
+
+                    // true => sensible image tile repeat...
+                    graphGeometry = new THREE.ParametricGeometry( meshFunction, segments, segments, true );
+
+                    ///////////////////////////////////////////////
+                    // calculate vertex colors based on Z values //
+                    ///////////////////////////////////////////////
+                    graphGeometry.computeBoundingBox();
+                    zMin = graphGeometry.boundingBox.min.z;
+                    zMax = graphGeometry.boundingBox.max.z;
+                    zRange = zMax - zMin;
+                    var color, point, face, numberOfSides, vertexIndex;
+                    // faces are indexed using characters
+                    var faceIndices = [ 'a', 'b', 'c', 'd' ];
+                    // first, assign colors to vertices as desired
+                    for ( var i = 0; i < graphGeometry.vertices.length; i++ )
+                    {
+                        point = graphGeometry.vertices[ i ];
+                        color = new THREE.Color( 0x0000ff );
+                        color.setHSL( 0.7 * (zMax - point.z) / zRange, 1, 0.5 );
+                        graphGeometry.colors[i] = color; // use this array for convenience
+                    }
+                    // copy the colors as necessary to the face's vertexColors array.
+                    for ( var i = 0; i < graphGeometry.faces.length; i++ )
+                    {
+                        face = graphGeometry.faces[ i ];
+                        numberOfSides = ( face instanceof THREE.Face3 ) ? 3 : 4;
+                        for( var j = 0; j < numberOfSides; j++ )
+                        {
+                            vertexIndex = face[ faceIndices[ j ] ];
+                            face.vertexColors[ j ] = graphGeometry.colors[ vertexIndex ];
+                        }
+                    }
+                    ///////////////////////
+                    // end vertex colors //
+                    ///////////////////////
+
+                    xMin = graphGeometry.boundingBox.min.x;
+                    xMax = graphGeometry.boundingBox.max.x;
+                    yMin = graphGeometry.boundingBox.min.y;
+                    yMax = graphGeometry.boundingBox.max.y;
+
+                    // material choices: vertexColorMaterial, wireMaterial , normMaterial , shadeMaterial
+
+                    if (graphMesh)
+                    {
+                        scene.remove( graphMesh );
+                        // renderer.deallocateObject( graphMesh );
+                    }
+
+                    graphMesh = new THREE.Mesh( graphGeometry, material );
+                    graphMesh.doubleSided = true;
+                    scene.add(graphMesh);
+                }
+
+                var objs = [];
+                function updateScene() {
+
+//                    var geometry = new THREE.Plane(new THREE.Vector3(1, 3, 1), -5),
+//                        plane = new THREE.Mesh(geometry, material);
+//
+//                    console.log(geometry);
+//
+//					scene.add(plane);
+
+                    for (var i in objs) { scene.remove(objs[i]); }
+
+                    var helper;
+                    scene.add( helper = new THREE.AxisHelper() );
+
+                    var sphg = new THREE.SphereGeometry(0.1, 32, 32);
+                    var sphere = new THREE.Mesh( sphg, material );
+                    sphere.position.x = vals[0];
+                    sphere.position.y = vals[1];
+                    sphere.position.z = vals[2];
+                    scene.add(sphere);
+
+                    createGraph();
+
+                    /*\
+                     Чтобы найти проекцию, нужно сначала записать уравнение перпендикуляра,
+                     проходящего через Н к данной плоскости, а потом найти точку пересечения
+                     найденного перпендикуляра и данной плоскости. Нормаль к данной плоскости (3,1,1)
+                     будет направляющим вектором перпендикуляра, поэтому параметрические уравнения
+                     перпендикуляра будут: X=1+3t; Y=t; Z=2+t; подставим в уравнение плоскости:
+                     3(1+3t)+t+2+t-2=0; найдём t=-3/11; подставим в параметрические уравнения:
+                     X=2/11, Y=-3/11, Z=19/11; проекцией будет точка M(2/11; -3/11; 19/11)
+                     */
+//                    var geometry = new THREE.Geometry();
+//                    var xx = vals[0], yy = vals[1], zz = vals[2];
+//                    var t = -(A*xx+B*yy+C*zz + D)/(A*A + B*B + C*C);
+//                    geometry.vertices.push(
+//                        new THREE.Vector3( vals[0], vals[1], vals[2] ),
+//                        new THREE.Vector3( xx+A*t, yy+B*t, zz+C*t )
+//                    );
+//
+//                    var line = new THREE.Line( geometry );
+//                    scene.add( line );
+//                    objs.push(line);
+
+                    objs.push(sphere, helper);
+                    render();
+
+                }
+
+                // additional setup
+                container = document.getElementById('container');
+                container.appendChild(renderer.domElement);
+                window.addEventListener('resize', onWindowResize, false);
+
+                count();
+
+            }
+
+            function onWindowResize() {
+
+                updateSizes();
+
+                camera.aspect = WIDTH / HEIGHT;
+                camera.updateProjectionMatrix();
+
+                renderer.setSize(WIDTH, HEIGHT);
+
+                render();
+
+            }
+
+            function render() {
+
+                renderer.render(scene, camera);
+
+            }
+
+
+        }</script>
+
+	</body>
+</html>

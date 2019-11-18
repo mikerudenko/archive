@@ -1,0 +1,54 @@
+// файл menu2.rc
+
+// виртуальная клавиша F5
+#define VK_F5   0х74
+
+// ************** MENUP **************
+
+MENUP MENU
+{
+ POPUP "&Первый пункт" 
+ {
+ MENUITEM "&Первый",1
+ MENUITEM "В&торой",2
+ }
+
+ POPUP "&Второй пункт"
+ {
+ MENUITEM "Трети&й",3
+ MENUITEM "Четверт&ый\tF5",4
+ MENUITEM SEPARATOR
+ POPUP "Еще подмен&ю"
+ {
+ MENUITEM "Дополнительный пу&нкт",6
+ }
+
+ }
+
+ MENUITEM "Вы&ход",5
+}
+
+//**************** MENUC ********************
+MENUC MENU
+{
+ POPUP "Набор первый"
+ {
+ MENUITEM "Белый",101
+ MENUITEM "Серый",102
+ MENUITEM "Черный",103
+ }
+ POPUP "Набор второй"
+ {
+ MENUITEM "Красный",104
+ MENUITEM "Синий",105
+ MENUITEM "Зеленый",106
+ }
+}
+
+// таблица акселераторов
+// определен один акселератор для вызова
+// пункта из меню MENUP
+MENUP ACCELERATORS
+{
+ VK_F5, 4, VIRTKEY, NOINVERT
+}

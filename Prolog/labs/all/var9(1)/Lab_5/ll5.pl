@@ -1,0 +1,6 @@
+% +List, -Newlist
+ch_plast([A,B],[A,B]).
+ch_plast([X|Xs],[Xs1|X]):-
+	ch_plast(Xs,Xs1).
+
+

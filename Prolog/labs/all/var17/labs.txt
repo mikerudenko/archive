@@ -1,0 +1,61 @@
+//////5/////////////
+%+List, -New List
+main([X|Xs],[X|Xs1]):-
+	length([X|Xs],L),
+	I is L//2,
+	add_to_list(Xs,I,X,_,Xs1).
+
+%+List, +Count, +X1, +Xn, -New list
+add_to_list([X|Xs],I,X1,Xn,[X|Xs1]):-
+	    I\=1,
+	    I1 is I-1,
+	    add_to_list(Xs,I1,X1,Xn,Xs1).
+add_to_list([Xn|Xs],1,X1,Xn,[Xn|Xs1]):-
+	add_to_list(Xs,0,X1,Xn,Xs1).
+add_to_list([],_,X1,Xn,[S]):-
+	S is X1+Xn.
+//////////////////////////////
+//////////////6///////////////
+% + List1, + List2, + List3 - New List
+main(L1,L2,L3,L):-
+	length(L1,N1),
+	length(L2,N2),
+	length(L3,N3),
+	K12 is N1//3+1,
+	K13 is N1//3*2+1,
+	K22 is N2//3+1,
+	K23 is N2//3*2+1,
+	K32 is N3//3+1,
+	K33 is N3//3*2+1,
+	parts(L1,1,K12,K13,Part11,_,_),
+	parts(L2,1,K22,K23,_,_,Part23),
+	parts(L3,1,K32,K33,_,Part32,_),
+	reverse(Part32,Part32rev),
+	append(Part11,Part23,Curr),
+	append(Curr,Part32rev,L).
+% + List, + Counter, + # first item of Part2,
+% + # first item of Part3, - Part1, - Part2, -Part3
+parts([X|Xs],I,K2,K3,[X|Part1],Part2,Part3):-
+	I<K2,
+	I1 is I+1,
+	parts(Xs,I1,K2,K3,Part1,Part2,Part3).
+parts([X|Xs],I,K2,K3,Part1,[X|Part2],Part3):-
+	I>=K2,
+	I<K3,
+	I1 is I+1,
+	parts(Xs,I1,K2,K3,Part1,Part2,Part3).
+parts(Part3,K3,_,K3,[],[],Part3).
+////////////////////////////////////////
+////////////////////////////9//////////////
+% +List, -Suma
+main(List,S):-
+	suma(List,0,S).
+
+% +List, -Accumulator, -Suma
+suma([X|Xs],Acc,S):-
+	X<0,!,
+	suma(Xs,Acc,S).
+suma([X|Xs],Acc,S):-
+	Acc1 is Acc+X,
+	suma(Xs,Acc1,S).
+suma([],S,S).

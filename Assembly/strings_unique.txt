@@ -1,0 +1,66 @@
+.model small
+
+.data
+inp		db	100 dup (0)	
+outp	db	100 dup (?)	
+welcome db	"Input string:  $"
+message db	"Result string: $"
+len		dw	0
+
+.code
+start:
+	mov ax, @data
+	mov ds, ax
+
+	mov ah, 09h
+	mov dx, offset welcome
+	int 21h
+
+	mov si, 0
+input:
+	mov ah, 01h
+	int 21h
+	mov inp[si], al
+	inc si
+	cmp al, 0Dh
+	jne input
+	mov len, si
+	
+	mov si, 0
+	mov di, 0
+	mov cx, len
+task:
+	mov bh, inp[si]
+	mov bl, inp[si+1]
+	inc si
+	cmp bl, bh
+	je skip
+	mov outp[di], bh
+	inc di
+	loop task
+
+	jmp results
+	
+skip:
+	dec cx
+	dec len
+	jmp task 
+	
+results:
+	lea dx, message
+	mov ah, 09h
+	int 21h
+ 
+	mov cx, len
+	mov si, 0
+output:
+	mov ah, 02h
+	mov dl, outp[si]
+	int 21h
+	inc si
+	loop output
+
+	mov ax, 4c00h
+	int 21h
+	
+end start

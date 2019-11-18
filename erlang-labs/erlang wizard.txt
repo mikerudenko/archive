@@ -1,0 +1,27 @@
+% 1> pwd().
+% C:/Program Files/erl5.7.1/usr
+% ok
+% 2>
+% Assume you have a file; "tut.erl" on your desktop. Content might look like this:
+
+% -module(tut).
+% -compile(export_all).
+
+% hello_world() ->
+%   hello.
+% You must change the path of the current working directory to the desktop first (or where ever you want to do the compile). Like this perhaps:
+
+% 2> cd("F:/Desktop").
+% F:/Desktop
+% ok
+% 3>
+% Then you can perform the compile.
+
+% 3> c(tut).
+% {ok,tut}
+% 4>
+% Then test the module
+
+% 4> tut:hello_world().
+% hello
+% 5>

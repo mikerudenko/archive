@@ -1,0 +1,2 @@
+% +List, -NewList
+ch_45([X|Xn1,Xn],[Xn1,Xn|X]).

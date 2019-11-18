@@ -1,0 +1,19 @@
+% + List1, + List2,  -NewList
+main(L1, L2, L_result):-
+	length(L1,Len_1),
+	length(L2,Len_2),
+	K_21 is Len_1//2 + 1,
+	K_22 is Len_2//2 + 1,
+	parts(L1, 1, K_21,Part_11,Part_21),
+	parts(L2, 1, K_22,Part_12,Part_22),
+	append(Part_11, Part_12, Current),
+	append(Current, Part_21, Current_1),
+	append(Current_1, Part_22, L_result).
+
+% +List, +Counter, +#first item of part2, -Part1, -Part2
+parts([X|Xs], I, K, [X|Part1], Part2):-
+	I<K,
+	I1 is I+1,
+	parts(Xs, I1, K, Part1, Part2).
+parts(Part2, K, K, [], Part2).
+

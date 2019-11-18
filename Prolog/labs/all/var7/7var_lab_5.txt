@@ -1,0 +1,8 @@
+% +List, -Replaced List
+replace_first_last([X|Xs],[Y|Xy]):-
+		   replace_last(X,Xs,Y,Xy).
+
+% +First Element, +List, -Last Element, -New List
+replace_last(First,[X|Xs],Last,[X|Xs1]):-
+	replace_last(First,Xs,Last,Xs1).
+replace_last(Y,[X],X,[Y]).

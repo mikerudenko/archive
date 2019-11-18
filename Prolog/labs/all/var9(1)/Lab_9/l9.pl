@@ -1,0 +1,9 @@
+% +List, -Newlist
+list([X|Xs],[X|Xs1]):-
+	S is X mod 2,
+	S=0,
+        !,
+	list(Xs,Xs1).
+list([_|Xs],Xs1):-
+	list(Xs,Xs1).
+list([],[]).
