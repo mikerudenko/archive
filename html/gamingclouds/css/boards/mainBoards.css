@@ -1,0 +1,224 @@
+/*
+* Created by Balion 02.04.15
+* Last modify 
+*/
+/*
+* 1- Gaming clouds header
+* 2- Main container styles 
+	a) header of main conteiner
+	b) part before main content
+	c) line
+*/
+/*
+* Created by Balion 24.03.15
+* Last modify 26.03.15
+*/
+/*
+* font-family: 'open_sansregular';
+* font-family: 'open_sansbold';
+*/
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../../fonts/OpenSans-Regular-webfont.eot');
+  src: url('../../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/OpenSans-Regular-webfont.woff2') format('woff2'), url('../../fonts/OpenSans-Regular-webfont.woff') format('woff'), url('../../fonts/OpenSans-Regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sansbold';
+  src: url('../../fonts/OpenSans-Bold-webfont.eot');
+  src: url('../../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/OpenSans-Bold-webfont.woff2') format('woff2'), url('../../fonts/OpenSans-Bold-webfont.woff') format('woff'), url('../../fonts/OpenSans-Bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sansextrabold';
+  src: url('../../fonts/open_sans_extra_bold.eot');
+  src: url('../../fonts/open_sans_extra_bold.eot?#iefix') format('embedded-opentype'), url('../../fonts/open_sans_extra_bold.woff2') format('woff2'), url('../../fonts/open_sans_extra_bold.woff') format('woff'), url('../../fonts/open_sans_extra_bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sanslight';
+  src: url('../../fonts/open_sans_light.eot');
+  src: url('../../fonts/open_sans_light.eot?#iefix') format('embedded-opentype'), url('../../fonts/open_sans_light.woff2') format('woff2'), url('../../fonts/open_sans_light.woff') format('woff'), url('../../fonts/open_sans_light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  background-color: #005367;
+  background-image: url("../../images/bg.png");
+  background-size: cover;
+  background-attachment: fixed; }
+
+a {
+  text-decoration: none; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.gaming-clouds-header {
+  min-width: 600px;
+  height: 60px;
+  border-bottom: 1px solid #446572;
+  background: rgba(18, 60, 79, 0.8); }
+  .gaming-clouds-header * {
+    display: inline-block;
+    vertical-align: top; }
+  .gaming-clouds-header .main-logo {
+    margin-top: 10px; }
+
+.main-logo {
+  margin-left: 20px; }
+
+.main-logo-title {
+  line-height: 60px;
+  margin-left: 5px;
+  font-family: 'open_sansregular';
+  font-size: 25px;
+  color: white;
+  text-shadow: 1px 2px 1px #0F343E; }
+
+.search {
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px; }
+
+.search input {
+  height: 30px;
+  width: 260px;
+  padding-left: 10px;
+  padding-right: 48px;
+  font-size: 15px;
+  box-sizing: border-box;
+  background: #0f3949 url(../../images/icon-search.png) 210px center no-repeat !important;
+  background: #0f3949 url(../../images/icon-search.png) 267px center no-repeat;
+  border-top: 1px solid #446572;
+  border-left: 1px solid #446572;
+  border-right: 1px solid #446572;
+  border-bottom: 1.5px solid #446572;
+  line-htight: 40px;
+  font-family: 'open_sansregular';
+  font-size: 20px;
+  color: #7ebdd3;
+  border-radius: 4px;
+  box-shadow: inset 0px 1px 0px 0px rgba(50, 50, 50, 0.75); }
+  .search input::-webkit-input-placeholder {
+    color: #7ebdd3; }
+  .search input::-moz-placeholder {
+    color: #7ebdd3; }
+  .search input::-ms-input-placeholder {
+    color: #7ebdd3; }
+  .search input:focus {
+    outline: none; }
+
+.main-container {
+  min-width: 600px;
+  margin: 6px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+.header-of-main-container {
+  background-image: url(../../images/pattern-header-table.png);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 1px solid #757677; }
+
+.profile {
+  display: inline-block;
+  vertical-align: top;
+  width: 330px;
+  padding-top: 9px;
+  padding-left: 10px;
+  padding-bottom: 9.25px;
+  border-top-left-radius: 4px;
+  border-left: 1px solid #737c7e;
+  background-image: url(../../images/pattern-profile.png);
+  font-family: 'open_sansregular'; }
+  .profile img, .profile .info-abut-person {
+    padding: 0;
+    display: inline-block;
+    vertical-align: top; }
+  .profile p {
+    margin: 0; }
+  .profile img {
+    border: 3px solid #676767;
+    border-radius: 4px; }
+
+.info-abut-person {
+  margin-left: 10px; }
+  .info-abut-person .welcome {
+    margin-top: -2px;
+    color: white;
+    font-size: 18px;
+    line-height: 18px; }
+  .info-abut-person .name {
+    display: block;
+    margin-top: -3px;
+    font-size: 22px;
+    text-decoration: underline;
+    color: #94d8f8;
+    cursor: pointer; }
+  .info-abut-person .last-sign {
+    display: block;
+    margin-top: 7px;
+    color: #5c5c5c; }
+
+.buttons-header-of-main-container {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  margin-top: 27.5px;
+  margin-right: 20px; }
+  .buttons-header-of-main-container a {
+    cursor: pointer;
+    display: inline-block;
+    color: #dbdbdb;
+    font-size: 16px;
+    font-family: 'open_sansregular';
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    vertical-align: top;
+    height: 35px;
+    line-height: 35px; }
+  .buttons-header-of-main-container .files {
+    width: 103px;
+    background: url(../../images/filesButton.png) no-repeat; }
+    .buttons-header-of-main-container .files:active {
+      background: url(../../images/patternButtons.png), url(../../images/filesButton.png) no-repeat; }
+  .buttons-header-of-main-container .quit {
+    width: 113px;
+    margin-left: 9px;
+    background: url(../../images/quitButton.png) no-repeat; }
+    .buttons-header-of-main-container .quit:active {
+      background: url(../../images/patternButtons.png), url(../../images/quitButton.png) no-repeat; }
+
+.main-part-of-container {
+  padding: 23px 20px 21px 20px;
+  background-image: url(../../images/pattern-main-table.png);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+.part-before-table * {
+  display: inline-block;
+  vertical-align: top; }
+.part-before-table p {
+  margin: 0;
+  font-size: 23px;
+  margin-top: 3px;
+  margin-left: 15px;
+  font-family: 'open_sansregular';
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #717171; }
+
+.line {
+  width: inherit;
+  margin-top: 15px;
+  margin-bottom: 0;
+  height: 1px;
+  background-color: #c5c5c5;
+  border-bottom: 1px solid white; }

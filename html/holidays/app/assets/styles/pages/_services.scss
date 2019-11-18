@@ -1,0 +1,132 @@
+.services {
+  &-section {
+    margin-top: 55px;
+    margin-bottom: 45px;
+
+    .shop-section-title {
+      margin-bottom: 35px;
+    }
+  }
+
+  &-filters-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+    @include mq("tablet-wide") {
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-bottom: 40px;
+
+      .filter-btn {
+        width: 190px;
+      }
+    }
+
+    .shop-select {
+      margin-bottom: 20px;
+      @include mq("tablet-wide") {
+        margin-bottom: 0;
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &-items {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mq("tablet-wide") {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &-item {
+    height: 308px;
+    width: 280px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include mq("tablet-wide") {
+      width:300px;
+      margin-bottom: 20px;
+
+      &:hover {
+        cursor: pointer;
+        img {
+          transform: scale(1.2);
+          filter: blur(5px);
+        }
+      }
+
+      &:not(:first-child):nth-child(5n),
+      &:not(:first-child):nth-child(5n+1) {
+        width:660px;
+        img {
+          width:660px;
+        }
+      }
+
+    }
+
+    &:not(:last-child) {
+      margin: {
+        bottom: 20px;
+      }
+    }
+
+    &:last-child {
+      margin: {
+        bottom: 35px;
+      }
+
+      @include mq("tablet-wide") {
+        margin-bottom: 20px;
+      }
+    }
+
+    img {
+      will-change: filter;
+      transition: .5s;
+      position: absolute;
+      width: 280px;
+      height: 310px;
+      object-fit: cover;
+      @include mq("tablet-wide") {
+        width: 300px;
+      }
+    }
+
+    &-description {
+      position: relative;
+      z-index: 15;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 15px;
+      color: white;
+      @extend %mont-bold;
+      font-size: $big-font-size;
+      &-category {
+        margin-bottom: 90px;
+      }
+
+      &-price {
+        span {
+          @extend %mont-regular;
+        }
+      }
+    }
+  }
+}

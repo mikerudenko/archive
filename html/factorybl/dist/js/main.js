@@ -1,0 +1,1 @@
+var swiper=new Swiper(".swiper-container",{nextButton:".swiper-button-next",prevButton:".swiper-button-prev",spaceBetween:0,speed:1e3,effect:"coverflow",autoplay:3e3,loop:!0});

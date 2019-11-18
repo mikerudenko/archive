@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+		<![endif]-->
+		link(rel="stylesheet", href="bower_components/reset-css/reset.css")
+		link(rel="stylesheet", href="css/main.css")
+		title Some title
+	body
+		.container
+			header.main-header
+				img.main-logo(src="images/logo.png", alt="")
+				.call-me-block
+					span.bg-text (044)243 76 46
+					span.bg-text.second-number (044)383 67 43
+					.btn.bg-btn.red-btn перезвоните мне
+			nav.main-nav
+				ul.main-menu
+					li.item-main-menu.active-item
+						a(href="#") главная
+					each val in ["О нас","Каталог товаров","Документы","Прайсы","Калькулятор металлов","новости","Статьи","Контакты"]
+						li.item-main-menu
+							a(href="#")= val
+			//Metals
+			.main-part
+				img.romb1(src="images/romb1.png", alt="")
+				img.romb2(src="images/romb2.png", alt="")
+				.righ-content
+					p.md-text.title-article This is Photoshop's version  of Lorem Ipsum.
+					p.sm-text.article-right This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+					.block-metals
+						img(src="images/pricelist.png", alt="")
+					.cleafix
+
+				.left-content
+					p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+			//Tabs
+			.tabs-block
+				.tabs
+					.tab-item.active-tab(data-class="1")Новости
+					.tab-item(data-class="2") Статьи
+				.tabs-content
+					.tabs-content-item.active-tab-content-item.tabs-content-item1
+						.row
+							.col-md-2
+								img.img-of-article(src="images/Foto1.png", alt="")
+								article.tab-article
+									p.sm-text.red-text.date 25.04.2015
+									p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+									a.sm-text.red-text.more-info(href="#") Подробнее...
+							.col-md-2
+								img.img-of-article(src="images/Foto2.png", alt="")
+								article.tab-article
+									p.sm-text.red-text.date 25.04.2015
+									p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+									a.sm-text.red-text.more-info(href="#") Подробнее...
+						.row
+							.col-md-2.article
+								img.img-of-article(src="images/Foto3.png", alt="")
+								article.tab-article
+									p.sm-text.red-text.date 25.04.2015
+									p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+									a.sm-text.red-text.more-info(href="#") Подробнее...
+							.col-md-2.article
+								img.img-of-article(src="images/Foto4.png", alt="")
+								article.tab-article
+									p.sm-text.red-text.date 25.04.2015
+									p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+									a.sm-text.red-text.more-info(href="#") Подробнее...
+						a.sm-text.red-text.all-news(href="#") Все новости
+						.cleafix
+					.tabs-content-item.tabs-content-item2
+						.row
+							.col-md-2.article
+								img.img-of-article(src="images/Foto3.png", alt="")
+								article.tab-article
+									p.sm-text.red-text.date 25.04.2015
+									p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+									a.sm-text.red-text.more-info(href="#") Подробнее...
+							.col-md-2.article
+								img.img-of-article(src="images/Foto4.png", alt="")
+								article.tab-article
+									p.sm-text.red-text.date 25.04.2015
+									p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+									a.sm-text.red-text.more-info(href="#") Подробнее...
+						.row
+							.col-md-2
+								img.img-of-article(src="images/Foto1.png", alt="")
+								article.tab-article
+									p.sm-text.red-text.date 25.04.2015
+									p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+									a.sm-text.red-text.more-info(href="#") Подробнее...
+							.col-md-2
+								img.img-of-article(src="images/Foto2.png", alt="")
+								article.tab-article
+									p.sm-text.red-text.date 25.04.2015
+									p.sm-text This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate
+									a.sm-text.red-text.more-info(href="#") Подробнее...
+						a.sm-text.red-text.all-news(href="#") Все новости
+						.cleafix
+			//Footer
+			footer.main-footer
+				nav.footer-nav
+					ul
+						each val in ["Главная","О нас","Каталог товаров","Документы","Прайсы","Калькулятор металлов","Новости","Статьи","Контакты"]
+							li.item-footer-menu.xs-text
+								a(href="#")= val
+				.info-about-company
+					img.settings-img(src="images/settings.png", alt="")
+					img.patterm-img(src="images/patern.png", alt="")
+					p.xs-text.copy Все права защищены 2015 Grand Lada
+					.footer-phones
+						p.xs-text (044)243 76 46
+						p.xs-text (044)243 76 46
+					.address
+						p.xs-text Адрес: 03151, г.Киев, ул.Ушинского, 40
+						a.xs-text.email.red-text(href="mailto:vlad@htmlbook.ru?subject=Вопрос по HTML") E-mail:office@grandlada.com
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+		script(src="js/main.js")

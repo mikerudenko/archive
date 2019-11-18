@@ -1,0 +1,490 @@
+/*
+* Created by Balion 02.04.15
+* Last modify 
+*/
+/*
+* 1. Button "new project"
+* 2. Table of projects styles 
+* 3. Controls after table
+* 4. MOdal window after click on button "new project"
+*/
+/*
+* Created by Balion 02.04.15
+* Last modify 
+*/
+/*
+* 1- Gaming clouds header
+* 2- Main container styles 
+	a) header of main conteiner
+	b) part before main content
+	c) line
+*/
+/*
+* Created by Balion 24.03.15
+* Last modify 26.03.15
+*/
+/*
+* font-family: 'open_sansregular';
+* font-family: 'open_sansbold';
+*/
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../../fonts/OpenSans-Regular-webfont.eot');
+  src: url('../../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/OpenSans-Regular-webfont.woff2') format('woff2'), url('../../fonts/OpenSans-Regular-webfont.woff') format('woff'), url('../../fonts/OpenSans-Regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sansbold';
+  src: url('../../fonts/OpenSans-Bold-webfont.eot');
+  src: url('../../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/OpenSans-Bold-webfont.woff2') format('woff2'), url('../../fonts/OpenSans-Bold-webfont.woff') format('woff'), url('../../fonts/OpenSans-Bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sansextrabold';
+  src: url('../../fonts/open_sans_extra_bold.eot');
+  src: url('../../fonts/open_sans_extra_bold.eot?#iefix') format('embedded-opentype'), url('../../fonts/open_sans_extra_bold.woff2') format('woff2'), url('../../fonts/open_sans_extra_bold.woff') format('woff'), url('../../fonts/open_sans_extra_bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sanslight';
+  src: url('../../fonts/open_sans_light.eot');
+  src: url('../../fonts/open_sans_light.eot?#iefix') format('embedded-opentype'), url('../../fonts/open_sans_light.woff2') format('woff2'), url('../../fonts/open_sans_light.woff') format('woff'), url('../../fonts/open_sans_light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  background-color: #005367;
+  background-image: url("../../images/bg.png");
+  background-size: cover;
+  background-attachment: fixed; }
+
+a {
+  text-decoration: none; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.gaming-clouds-header {
+  min-width: 600px;
+  height: 60px;
+  border-bottom: 1px solid #446572;
+  background: rgba(18, 60, 79, 0.8); }
+  .gaming-clouds-header * {
+    display: inline-block;
+    vertical-align: top; }
+  .gaming-clouds-header .main-logo {
+    margin-top: 10px; }
+
+.main-logo {
+  margin-left: 20px; }
+
+.main-logo-title {
+  line-height: 60px;
+  margin-left: 5px;
+  font-family: 'open_sansregular';
+  font-size: 25px;
+  color: white;
+  text-shadow: 1px 2px 1px #0F343E; }
+
+.search {
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px; }
+
+.search input {
+  height: 30px;
+  width: 260px;
+  padding-left: 10px;
+  padding-right: 48px;
+  font-size: 15px;
+  box-sizing: border-box;
+  background: #0f3949 url(../../images/icon-search.png) 210px center no-repeat !important;
+  background: #0f3949 url(../../images/icon-search.png) 267px center no-repeat;
+  border-top: 1px solid #446572;
+  border-left: 1px solid #446572;
+  border-right: 1px solid #446572;
+  border-bottom: 1.5px solid #446572;
+  line-htight: 40px;
+  font-family: 'open_sansregular';
+  font-size: 20px;
+  color: #7ebdd3;
+  border-radius: 4px;
+  box-shadow: inset 0px 1px 0px 0px rgba(50, 50, 50, 0.75); }
+  .search input::-webkit-input-placeholder {
+    color: #7ebdd3; }
+  .search input::-moz-placeholder {
+    color: #7ebdd3; }
+  .search input::-ms-input-placeholder {
+    color: #7ebdd3; }
+  .search input:focus {
+    outline: none; }
+
+.main-container {
+  min-width: 600px;
+  margin: 6px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+.header-of-main-container {
+  background-image: url(../../images/pattern-header-table.png);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 1px solid #757677; }
+
+.profile {
+  display: inline-block;
+  vertical-align: top;
+  width: 330px;
+  padding-top: 9px;
+  padding-left: 10px;
+  padding-bottom: 9.25px;
+  border-top-left-radius: 4px;
+  border-left: 1px solid #737c7e;
+  background-image: url(../../images/pattern-profile.png);
+  font-family: 'open_sansregular'; }
+  .profile img, .profile .info-abut-person {
+    padding: 0;
+    display: inline-block;
+    vertical-align: top; }
+  .profile p {
+    margin: 0; }
+  .profile img {
+    border: 3px solid #676767;
+    border-radius: 4px; }
+
+.info-abut-person {
+  margin-left: 10px; }
+  .info-abut-person .welcome {
+    margin-top: -2px;
+    color: white;
+    font-size: 18px;
+    line-height: 18px; }
+  .info-abut-person .name {
+    display: block;
+    margin-top: -3px;
+    font-size: 22px;
+    text-decoration: underline;
+    color: #94d8f8;
+    cursor: pointer; }
+  .info-abut-person .last-sign {
+    display: block;
+    margin-top: 7px;
+    color: #5c5c5c; }
+
+.buttons-header-of-main-container {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  margin-top: 27.5px;
+  margin-right: 20px; }
+  .buttons-header-of-main-container a {
+    cursor: pointer;
+    display: inline-block;
+    color: #dbdbdb;
+    font-size: 16px;
+    font-family: 'open_sansregular';
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    vertical-align: top;
+    height: 35px;
+    line-height: 35px; }
+  .buttons-header-of-main-container .files {
+    width: 103px;
+    background: url(../../images/filesButton.png) no-repeat; }
+    .buttons-header-of-main-container .files:active {
+      background: url(../../images/patternButtons.png), url(../../images/filesButton.png) no-repeat; }
+  .buttons-header-of-main-container .quit {
+    width: 113px;
+    margin-left: 9px;
+    background: url(../../images/quitButton.png) no-repeat; }
+    .buttons-header-of-main-container .quit:active {
+      background: url(../../images/patternButtons.png), url(../../images/quitButton.png) no-repeat; }
+
+.main-part-of-container {
+  padding: 23px 20px 21px 20px;
+  background-image: url(../../images/pattern-main-table.png);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+.part-before-table * {
+  display: inline-block;
+  vertical-align: top; }
+.part-before-table p {
+  margin: 0;
+  font-size: 23px;
+  margin-top: 3px;
+  margin-left: 15px;
+  font-family: 'open_sansregular';
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #717171; }
+
+.line {
+  width: inherit;
+  margin-top: 15px;
+  margin-bottom: 0;
+  height: 1px;
+  background-color: #c5c5c5;
+  border-bottom: 1px solid white; }
+
+.button-new-project {
+  width: 176px;
+  height: 35px;
+  line-height: 35px;
+  margin-left: 39.5px;
+  background: #5eaa61;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 2px solid #539a57;
+  color: white;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  font-family: 'open_sansbold';
+  font-size: 16px;
+  border-radius: 2px;
+  margin-top: 4px; }
+  .button-new-project span {
+    padding-right: 5px;
+    font-family: 'open_sansbold';
+    font-size: 30px;
+    color: #bfeaad; }
+  .button-new-project:active {
+    background: #539a57;
+    border-bottom: 2px solid #5eaa61;
+    color: #aecdad; }
+
+.table-of-projects {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0px 10px;
+  margin-bottom: 32px; }
+  .table-of-projects tr {
+    height: 70px; }
+  .table-of-projects thead {
+    line-height: 30px;
+    font-size: 14px;
+    font-family: 'open_sansbold';
+    font-size: 18px;
+    color: #5f5f5f;
+    text-align: center; }
+    .table-of-projects thead tr {
+      height: 30px; }
+    .table-of-projects thead td:first-child {
+      width: 60px; }
+  .table-of-projects tbody tr {
+    height: 70px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 70px; }
+    .table-of-projects tbody tr:first-child, .table-of-projects tbody tr:nth-child(4n+1) {
+      background: #cfe7c5; }
+    .table-of-projects tbody tr:nth-child(2), .table-of-projects tbody tr:nth-child(4n+2) {
+      background: #c9e8f7; }
+    .table-of-projects tbody tr:nth-child(3), .table-of-projects tbody tr:nth-child(4n+3) {
+      background: #fcf8e3; }
+    .table-of-projects tbody tr:nth-child(4), .table-of-projects tbody tr:nth-child(4n) {
+      background: #f6d0d0; }
+    .table-of-projects tbody tr p {
+      margin: 0; }
+    .table-of-projects tbody tr .item-counter {
+      position: relative;
+      padding-left: 5px;
+      width: 70px; }
+      .table-of-projects tbody tr .item-counter p {
+        display: inline-block;
+        margin: 0 auto;
+        border: none !important;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        border: 1px solid #b2afa4;
+        font-family: 'open_sansbold';
+        font-size: 18px;
+        color: #5b879d; }
+        .table-of-projects tbody tr .item-counter p:hover {
+          background: rgba(95, 95, 95, 0.2); }
+    .table-of-projects tbody tr .item-project {
+      min-width: 120px;
+      max-width: 210px;
+      font-size: 13px;
+      color: #5f5f5f;
+      font-family: 'open_sansregular'; }
+    .table-of-projects tbody tr .item-link {
+      max-width: 200px;
+      font-size: 13px; }
+      .table-of-projects tbody tr .item-link a {
+        display: inline-block;
+        padding-left: 40px;
+        font-family: 'open_sansregular';
+        background: url(../../images/slot.png) no-repeat;
+        background-position: 0 center;
+        color: #328dba; }
+    .table-of-projects tbody tr .item-status {
+      position: relative;
+      display: inline-block;
+      padding-left: 40px;
+      font-size: 13px;
+      max-width: 220px; }
+      .table-of-projects tbody tr .item-status p {
+        font-family: 'open_sansregular';
+        font-size: 13px;
+        color: #5f5f5f; }
+        .table-of-projects tbody tr .item-status p:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 27px;
+          left: 8px;
+          width: 28px;
+          height: 22px;
+          background: url(../../images/spriteIconsButtons.png);
+          background-position: 511px -213px; }
+    .table-of-projects tbody tr .enter-backoffic-button, .table-of-projects tbody tr .delete-project-button {
+      margin: 0 auto;
+      height: 23px;
+      line-height: 23px;
+      display: block;
+      font-size: 11px;
+      cursor: pointer;
+      border-radius: 2px;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: 'open_sansbold'; }
+    .table-of-projects tbody tr .enter-backoffic-button {
+      padding: 6px;
+      width: 130px;
+      background: #70abbe;
+      border-bottom: 2px solid #5699af; }
+      .table-of-projects tbody tr .enter-backoffic-button:active {
+        background: #659bad;
+        border-bottom: 2px solid #70abbe;
+        color: #b5ced6; }
+    .table-of-projects tbody tr .item-delete-project {
+      max-width: 310px;
+      padding-right: 10px; }
+
+.controls {
+  width: 380px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'open_sansregular';
+  font-size: 13px; }
+  .controls * {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 9px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-color: #53a3cb;
+    border-radius: 4px;
+    line-height: 32px;
+    color: white;
+    text-align: center; }
+    .controls *:hover {
+      background-color: #a8c7d6; }
+  .controls .item-number:nth-child(4) {
+    background: white;
+    color: #53a3cb; }
+  .controls .left-control {
+    width: 58px;
+    background: #53a3cb url(../../images/left-arrow.png) center center no-repeat; }
+    .controls .left-control:hover {
+      background-color: #a8c7d6; }
+  .controls .right-control {
+    background: #53a3cb url(../../images/right-arrow.png) center center no-repeat; }
+    .controls .right-control:hover {
+      background-color: #a8c7d6; }
+  .controls .left-control, .controls .right-control {
+    width: 58px; }
+
+.dark-wrapper-project-form {
+  z-index: -10;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5); }
+
+.project-form {
+  top: 20%;
+  left: 50%;
+  margin-left: -276px;
+  position: fixed;
+  z-index: -10;
+  width: 555px;
+  opacity: 0;
+  border-radius: 4px;
+  background-image: url(../../images/modal-window-pattern.png);
+  box-shadow: 4px 4px 1px 0px rgba(113, 131, 141, 0.8); }
+  .project-form .title-project-form {
+    margin: 0;
+    padding-top: 37px;
+    color: #5a8292;
+    font-family: 'open_sansbold';
+    font-size: 48px;
+    text-align: center; }
+
+.popup-form {
+  width: 500px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  margin: 17px auto 0; }
+  .popup-form .grey-line {
+    width: inherit;
+    height: 1px;
+    margin: 0;
+    background: #cdcece; }
+  .popup-form .second-line {
+    margin-top: 30.5px; }
+  .popup-form input[type="text"] {
+    display: block;
+    width: 500px;
+    height: 50px;
+    padding-left: 55px;
+    box-sizing: border-box;
+    line-height: 50px;
+    color: #b1b1b1;
+    font-family: 'open_sansregular';
+    font-size: 20px;
+    box-shadow: inset 1px 1px 5px 0px #b1b1b1;
+    border-radius: 4px;
+    border: none;
+    border-botton: 1px solid white; }
+    .popup-form input[type="text"]:active, .popup-form input[type="text"]:focus {
+      outline: none; }
+  .popup-form .name-casino-input {
+    margin-top: 28px;
+    background: url(../../images/iconNameCasino.png) 15px 15px no-repeat, url(../../images/input-pattern.png); }
+  .popup-form .domain-input {
+    margin-top: 20px;
+    background: url(../../images/iconDomain.png) 15px 10px no-repeat, url(../../images/input-pattern.png); }
+  .popup-form .save-button {
+    width: 140px;
+    height: 50px;
+    margin-top: 30px;
+    background: #76a463;
+    border: none;
+    border-bottom: 2px solid #6a9559;
+    border-radius: 2px;
+    line-height: 50px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    font-family: 'open_sansbold';
+    font-size: 20px;
+    text-transform: uppercase; }
+    .popup-form .save-button:active {
+      outline: none;
+      background: #539a57;
+      border-bottom: 2px solid #5eaa61;
+      color: #aecdad; }

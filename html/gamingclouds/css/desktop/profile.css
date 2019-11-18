@@ -1,0 +1,421 @@
+/*
+* Created by Balion 26.03.15
+* Last modify  5/21/2015
+*/
+* {
+  margin: 0;
+  padding: 0; }
+
+/*
+* Created by Balion 24.03.15
+* Last modify 26.03.15
+*/
+/*
+* 1- Gaming clouds header
+* 2- Main container styles 
+	a) header of main conteiner
+	b) part before main content
+	c) line
+*/
+/*
+* Created by Balion 24.03.15
+* Last modify 26.03.15
+*/
+/*
+* font-family: 'open_sansregular';
+* font-family: 'open_sansbold';
+*/
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('../../fonts/OpenSans-Regular-webfont.eot');
+  src: url('../../fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/OpenSans-Regular-webfont.woff2') format('woff2'), url('../../fonts/OpenSans-Regular-webfont.woff') format('woff'), url('../../fonts/OpenSans-Regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sansbold';
+  src: url('../../fonts/OpenSans-Bold-webfont.eot');
+  src: url('../../fonts/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/OpenSans-Bold-webfont.woff2') format('woff2'), url('../../fonts/OpenSans-Bold-webfont.woff') format('woff'), url('../../fonts/OpenSans-Bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sansextrabold';
+  src: url('../../fonts/open_sans_extra_bold.eot');
+  src: url('../../fonts/open_sans_extra_bold.eot?#iefix') format('embedded-opentype'), url('../../fonts/open_sans_extra_bold.woff2') format('woff2'), url('../../fonts/open_sans_extra_bold.woff') format('woff'), url('../../fonts/open_sans_extra_bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'open_sanslight';
+  src: url('../../fonts/open_sans_light.eot');
+  src: url('../../fonts/open_sans_light.eot?#iefix') format('embedded-opentype'), url('../../fonts/open_sans_light.woff2') format('woff2'), url('../../fonts/open_sans_light.woff') format('woff'), url('../../fonts/open_sans_light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  background-color: #005367;
+  background-image: url("../../images/bg.png");
+  background-size: cover;
+  background-attachment: fixed; }
+
+a {
+  text-decoration: none; }
+
+body, html, *, div, p, a {
+  margin: 0;
+  padding: 0; }
+
+.gaming-clouds-header {
+  min-width: 1033px;
+  height: 82px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #113a4e;
+  box-shadow: 0px 1px 0px 0px #5c7988;
+  background: rgba(18, 61, 80, 0.75);
+  box-sizing: border-box; }
+  .gaming-clouds-header * {
+    display: inline-block;
+    vertical-align: top; }
+
+.main-logo {
+  margin-left: 27px; }
+
+.main-logo-title {
+  margin-left: -2.5px;
+  line-height: 45px;
+  color: #E9F4F9;
+  font-family: 'open_sansregular';
+  font-size: 31px;
+  font-weight: 400;
+  text-shadow: 2.5px 4.3px 0 rgba(0, 0, 2, 0.4); }
+
+.search {
+  position: relative;
+  float: right;
+  margin-right: 24px;
+  margin-top: 2px; }
+
+.search input[type="text"] {
+  height: 40px;
+  width: 310px;
+  padding-left: 20px;
+  padding-right: 48px;
+  box-sizing: border-box;
+  background: url(../../images/icon-search.png) 268px center no-repeat, url(../../images/pattern-search.png);
+  border: 1px solid #185974;
+  border-bottom: 1px solid #446471;
+  line-htight: 40px;
+  font-family: 'open_sansregular';
+  font-size: 20px;
+  color: rgba(126, 189, 211, 0.5);
+  border-radius: 4px;
+  box-shadow: inset 0px 1px 0px 0px #0a2530, 0px 1px 0px 0px #185974; }
+  .search input[type="text"]::-webkit-input-placeholder {
+    color: rgba(126, 189, 211, 0.5); }
+  .search input[type="text"]::-moz-placeholder {
+    color: rgba(126, 189, 211, 0.5); }
+  .search input[type="text"]::-ms-input-placeholder {
+    color: rgba(126, 189, 211, 0.5); }
+  .search input[type="text"]:focus {
+    outline: none;
+    color: #7ebdd3; }
+
+.search input[type="submit"] {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  width: 29px;
+  height: 25px;
+  background: url(../../images/icon-search.png);
+  border: none;
+  cursor: pointer; }
+  .search input[type="submit"]:active, .search input[type="submit"]:link, .search input[type="submit"]:visited {
+    outline: none; }
+
+.main-container {
+  min-width: 1024px;
+  margin: 9px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+.header-of-main-container {
+  height: 82px;
+  box-sizing: border-box;
+  background-image: url(../../images/pattern-header-table.png);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 1px solid #757677; }
+
+.profile {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  height: 81px;
+  box-sizing: border-box;
+  width: 430px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top-left-radius: 4px;
+  border-right: 1px solid #737c7e;
+  background-image: url(../../images/pattern-profile.png);
+  font-family: 'open_sansregular'; }
+  .profile:after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 81px;
+    background: #b2b9ba;
+    position: absolute;
+    top: 0;
+    right: -2px; }
+  .profile img, .profile .info-abut-person {
+    padding: 0;
+    display: inline-block;
+    vertical-align: top; }
+    .profile img span, .profile .info-abut-person span {
+      display: block; }
+  .profile p {
+    margin: 0; }
+  .profile img {
+    border: 3px solid #676767;
+    border-radius: 2px;
+    margin-left: 24px; }
+
+.info-abut-person {
+  margin-left: 19px;
+  box-sizing: border-box; }
+  .info-abut-person .welcome {
+    color: white;
+    font-size: 18px;
+    height: 18px;
+    line-height: 19px; }
+  .info-abut-person .name {
+    margin-top: 1px;
+    display: block;
+    font-size: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-decoration: underline;
+    color: #94d8f8;
+    cursor: pointer; }
+  .info-abut-person .last-sign {
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 8px;
+    color: #5c5c5c; }
+
+.buttons-header-of-main-container {
+  display: inline-block;
+  vertical-align: top;
+  float: right;
+  margin-top: 23px;
+  margin-right: 32px; }
+  .buttons-header-of-main-container a {
+    cursor: pointer;
+    display: inline-block;
+    color: #DCDCDC;
+    font-size: 16px;
+    font-family: 'open_sansregular';
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid #5d6a6c;
+    text-shadow: 0.5px 0.9px 0 rgba(0, 0, 2, 0.25);
+    display: inline-block;
+    vertical-align: top;
+    height: 35px;
+    line-height: 30px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    border-radius: 2px;
+    background: url(../../images/pattern-btns.png);
+    position: relative; }
+    .buttons-header-of-main-container a:hover {
+      background: url(../../images/pattern-btns.png) 0 33px; }
+  .buttons-header-of-main-container .files {
+    width: 103px; }
+    .buttons-header-of-main-container .files:before {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 16px;
+      width: 22px;
+      height: 27px;
+      background: url(../../images/F.png); }
+    .buttons-header-of-main-container .files:active {
+      box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+      background: url(../../images/patternButtons.png), -webkit-linear-gradient(top, #959fa1, #607174); }
+  .buttons-header-of-main-container .quit {
+    width: 113px;
+    margin-left: 10px; }
+    .buttons-header-of-main-container .quit:before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 16px;
+      width: 26px;
+      height: 21px;
+      background: url(../../images/Q.png); }
+    .buttons-header-of-main-container .quit:active {
+      box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+      background: url(../../images/patternButtons.png), -webkit-linear-gradient(top, #959fa1, #607174); }
+
+.main-part-of-container {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-left: 31px;
+  padding-right: 32px;
+  background-image: url(../../images/pattern-main-table.png);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom: 1px solid #f4f4f4;
+  height: 66px;
+  box-sizing: border-box; }
+
+.part-before-table * {
+  display: inline-block;
+  vertical-align: top; }
+.part-before-table p {
+  margin: 0;
+  margin-left: 16.5px;
+  font-family: 'open_sansregular';
+  font-size: 30px;
+  line-height: 43px;
+  height: 43px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #717171; }
+
+.line {
+  width: inherit;
+  margin-top: 30.25px;
+  margin-bottom: 0;
+  height: 1px;
+  background-color: #c5c5c5;
+  border-bottom: 1px solid white; }
+
+.profile-part {
+  padding-bottom: 320px;
+  margin-top: 20px;
+  background: #e8e8e8; }
+
+.part-before-table {
+  padding-top: 18px; }
+  .part-before-table p {
+    margin-left: 13.5px;
+    margin-top: 2px; }
+
+.profile-info, .block-of-forms, .change-personal-inform, .change-password {
+  display: inline-block;
+  vertical-align: top; }
+
+.main-part-of-container {
+  height: 100%; }
+
+.profile-info {
+  width: 434px;
+  padding-top: 20px;
+  padding-bottom: 31.5px;
+  box-sizing: border-box;
+  text-align: center;
+  background: white;
+  border-right: 1px solid #c5c5c5;
+  box-shadow: 1px 0px 0px 0px white; }
+  .profile-info p {
+    font-family: 'open_sansregular';
+    font-size: 16px;
+    color: #6d8b9a; }
+  .profile-info img {
+    cursor: pointer;
+    border: 2px solid #c2c2c2;
+    border-radius: 4px; }
+  .profile-info .id-profile {
+    margin-top: 26.5px; }
+  .profile-info .username-profile {
+    margin-top: 14.5px; }
+  .profile-info .email-profile {
+    margin-top: 14.5px; }
+  .profile-info .phone-profile {
+    margin-top: 13.5px; }
+  .profile-info .reg-date-profile {
+    margin-top: 12.5px; }
+
+.change-personal-inform, .change-password {
+  margin-left: 25px;
+  width: 430px; }
+  .change-personal-inform input[type="text"], .change-personal-inform input[type="email"], .change-personal-inform input[type="password"], .change-password input[type="text"], .change-password input[type="email"], .change-password input[type="password"] {
+    width: inherit;
+    height: 40px;
+    width: 434px;
+    margin-top: 30px;
+    padding-left: 19px;
+    box-sizing: border-box;
+    color: #a7a7a7;
+    box-shadow: 0px 1px 0px 0px white;
+    line-height: 38px;
+    font-family: 'open_sansregular';
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #cccccc; }
+    .change-personal-inform input[type="text"]::-webkit-input-placeholder, .change-personal-inform input[type="email"]::-webkit-input-placeholder, .change-personal-inform input[type="password"]::-webkit-input-placeholder, .change-password input[type="text"]::-webkit-input-placeholder, .change-password input[type="email"]::-webkit-input-placeholder, .change-password input[type="password"]::-webkit-input-placeholder {
+      color: rgba(167, 167, 167, 0.5); }
+    .change-personal-inform input[type="text"]::-moz-placeholder, .change-personal-inform input[type="email"]::-moz-placeholder, .change-personal-inform input[type="password"]::-moz-placeholder, .change-password input[type="text"]::-moz-placeholder, .change-password input[type="email"]::-moz-placeholder, .change-password input[type="password"]::-moz-placeholder {
+      color: rgba(167, 167, 167, 0.5); }
+    .change-personal-inform input[type="text"]::-ms-input-placeholder, .change-personal-inform input[type="email"]::-ms-input-placeholder, .change-personal-inform input[type="password"]::-ms-input-placeholder, .change-password input[type="text"]::-ms-input-placeholder, .change-password input[type="email"]::-ms-input-placeholder, .change-password input[type="password"]::-ms-input-placeholder {
+      color: rgba(167, 167, 167, 0.5); }
+    .change-personal-inform input[type="text"]:focus, .change-personal-inform input[type="email"]:focus, .change-personal-inform input[type="password"]:focus, .change-password input[type="text"]:focus, .change-password input[type="email"]:focus, .change-password input[type="password"]:focus {
+      outline: none;
+      color: #a7a7a7; }
+  .change-personal-inform input[type="submit"], .change-password input[type="submit"] {
+    height: 40px; }
+  .change-personal-inform .first-input, .change-password .first-input {
+    margin-top: 0 !important; }
+
+.change-personal-inform {
+  padding-right: 34px;
+  border-right: 1px solid #c5c5c5;
+  box-shadow: 1px 0px 0px 0px white; }
+  .change-personal-inform input[type="submit"] {
+    margin-top: 32px;
+    width: 152px; }
+
+.change-password .change-password-btn {
+  margin-top: 30px;
+  width: 244px; }
+
+.submit-buttons {
+  color: white;
+  background: #83a9bc;
+  border: none;
+  border-bottom: 2px solid #6e98ad;
+  border-radius: 2px;
+  font-family: 'open_sansregular';
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer; }
+  .submit-buttons:active {
+    outline: none;
+    background: #659bad;
+    border-bottom: 2px solid #70abbe;
+    color: #b5ced6; }
+
+.title-forms {
+  margin-top: 7px;
+  margin-bottom: 16px;
+  font-family: 'open_sansregular';
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #5f5f5f; }
+
+@media screen and (max-width: 1490px) {
+  .change-personal-inform, .change-password {
+    display: block; }
+  .change-personal-inform {
+    border-right: none;
+    box-shadow: none; }
+  .change-password p {
+    margin-top: 40px; } }

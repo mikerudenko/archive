@@ -1,0 +1,53 @@
+@import "../base/index.css";
+@import "components.css";
+@import "modules/index.css";
+
+.container {
+	width: 780px;
+	margin: 0 auto;
+}
+
+.container-fluid {
+	min-width: 780px;
+	width: 100%;
+}
+
+@mixin inline-blocks {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.item-main-nav,
+.main-nav-wrapper,
+.google-and-apple *,
+.circle-btn,
+.grey-btn,
+.persons,
+.persons .person-info .avatar,
+.persons .person-info .person-content,
+.contact-us-info,
+.copy-and-footer-nav,
+.copy-text,
+.footer-menu,
+.item-footer-menu,
+.social-footer-menu {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.iphone5,
+.block-about-us,
+.persons,
+.contact-us-info {
+	display: block;
+	margin: 0 auto;
+}
+
+.block-about-us,
+.contact-us-info {
+	text-align: center;
+}
+
+.active-about-us-item {
+	display: inline-block;
+}

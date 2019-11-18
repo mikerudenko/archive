@@ -1,0 +1,416 @@
+%inline-block {
+	display:inline-block;
+	vertical-align: top;
+}
+
+%before-after-element {
+	content:'';
+	display: block;
+	position: absolute;
+}
+
+.top-line {
+	height: 30px;
+	background: -moz-linear-gradient(top, #ffffff,#f9f9fa);
+	background: -webkit-linear-gradient(top, #ffffff,#f9f9fa);
+	background: -o-linear-gradient(top, #ffffff,#f9f9fa);
+	background: -ms-linear-gradient(top, #ffffff,#f9f9fa);
+	background: linear-gradient(top, #ffffff,#f9f9fa);
+
+	.container {
+		padding-top: 9px;
+	}
+	.container * {
+		@extend %inline-block;
+	}
+
+	.time {
+		position: relative;
+		padding-left: 19px;
+
+		&:before {
+			@extend %before-after-element;
+			width: 11px;
+			height: 11px;
+			top: -1px;
+			left: 0;
+			background: url(../images/icon-clock.gif);
+		}
+	}
+
+	.right-content {
+		float: right;
+		margin-right: 227px;
+	}
+
+
+	.social-btns {
+		margin-right: 20px;
+	}
+
+	.settings {
+		position: relative;
+		margin-left: 20px;
+		padding-left: 18px;
+		box-sizing: border-box;
+
+		&:before {
+			@extend %before-after-element;
+			width: 11px;
+			height: 11px;
+			top: -1px;
+			left: 0;
+			background: url(../images/icon-settings.gif);
+		}
+	}
+
+	.chat-live {
+		position: relative;
+		border-left: 1px solid #bfbfbf;
+		border-right: 1px solid #bfbfbf;
+		padding-left: 40px;
+		padding-right: 20px;
+
+		&:before {
+			@extend %before-after-element;
+			width: 13px;
+			height: 11px;
+			top: -1px;
+			left: 20px;
+			background: url(../images/icon-think.gif);
+		}
+	}
+}
+
+.main-header {
+	height: 102px;
+	background-image: url(../images/header-bg.png);
+	background-size: cover;
+	border-bottom: 1px solid #444444;
+
+	.main-logo {
+		margin-top: 37px;
+		margin-left: 10px;
+	}
+}
+
+.main-nav {
+	height: 34px;
+	box-sizing: border-box;
+	border-top: 1px solid #8f8f8f;
+	border-bottom: 1px solid #444444;
+	background: -moz-linear-gradient(top, #5e5e5e,#343434);
+	background: -webkit-linear-gradient(top, #5e5e5e,#343434);
+	background: -o-linear-gradient(top, #5e5e5e,#343434);
+	background: -ms-linear-gradient(top, #5e5e5e,#343434);
+	background: linear-gradient(top, #5e5e5e,#343434);
+}
+
+.main-container {
+	margin-top: 13px !important;
+
+}
+
+.top-block-container {
+	position: relative;
+	height: 52px;
+	background: url(../images/top-content-line.png);
+
+	.coins {
+		position: absolute;
+		top: 13px;
+		right: 12px;
+		cursor: pointer;
+	}
+
+	.title-deposit {
+		padding-top: 20px;
+		margin-left: 20px;
+	}
+}
+
+.main-content-block {
+	position: relative;
+	margin-top: 14px;
+}
+
+.content {
+	display: table;
+
+	.left-part,
+	.central-part {
+		display: table-cell;
+	}
+
+	.left-part {
+		box-sizing: border-box;
+		background: #efefef;
+		width: 268px;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		padding: 21px;
+		padding-bottom:0;
+
+		.new-method  {
+			box-sizing: border-box;
+			position: relative;
+			padding-top: 14px;
+			padding-bottom: 14px;
+			padding-left: 8px;
+			padding-right: 19px;
+			margin-bottom: 14px;
+			border-top: 1px solid #d8d8d8;
+			border-bottom: 1px solid #d8d8d8;
+
+			&:after {
+				@extend %before-after-element;
+				top:12px;
+				right: 15px;
+				width: 16px;
+				height: 16px;
+				background: url(../images/plus.png);
+				cursor: pointer;
+			}
+		}
+	}
+
+	.central-part {
+		position: relative;
+		box-sizing: border-box;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		border: 1px solid #d8d8d8;
+		padding-top: 35px;
+		padding-left: 39px;
+		padding-right: 39px;
+		padding-bottom: 85px;
+		width: 480px;
+
+		&:before {
+			@extend %before-after-element;
+			top: 140px;
+			left:-8px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 8px 8px 0;
+			border-color: transparent #dedede transparent transparent;
+		}
+
+		&:after {
+			@extend %before-after-element;
+			top: 141px;
+			left:-6px;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 7px 7px 7px 0;
+			border-color: transparent #ffffff transparent transparent;
+		}
+
+
+		.title-with-img {
+			position: relative;
+			&:after {
+				@extend %before-after-element;
+				top:0;
+				right: 0;
+				width: 54px;
+				height: 13px;
+				background: url(../images/bank.png);
+			}
+		}
+
+
+		.deposit-table {
+			margin-top: 17px;
+			margin-bottom: 56px;
+			margin-left: 18px;
+		}
+
+		.table-border {
+			margin-top: 19px;
+			margin-bottom: 40px;
+		}
+
+		.info-card {
+			margin-top: 20px;
+		}
+	}
+}
+
+.sidebar {
+	position: absolute;
+	top:0;
+	right:0;
+	width: 220px;
+
+	.support-block {
+		border: 1px solid #d8d8d8;
+		border-radius: 5px;
+		padding-bottom: 20px;
+
+		a,
+		.phone {
+			line-height: 20px;
+			padding-left: 30px;
+		}
+
+		.live-chat-sb {
+			position: relative;
+			&:before {
+				@extend %before-after-element;
+				width: 11px;
+				height: 9px;
+				top:4px;
+				left:12px;
+				background: url(../images/icon-little-speak.png);
+			}
+		}
+
+		.send-email-sb {
+			position: relative;
+			&:before {
+				@extend %before-after-element;
+				width: 11px;
+				height: 8px;
+				top:4px;
+				left:12px;
+				background: url(../images/mail.png);
+			}
+		}
+
+		.sm-text.phone {
+			position: relative;
+			&:before {
+				@extend %before-after-element;
+				width: 11px;
+				height: 8px;
+				top:4px;
+				left:12px;
+				background: url(../images/phone.png);
+			}
+		}
+
+
+		.head-support {
+			position: relative;
+			border-radius: 4px;
+			height: 70px;
+			background: #f7f7f7;
+			border-bottom: 1px solid #d8d8d8;
+			margin-bottom: 20px;
+
+			&:before {
+				@extend %before-after-element;
+				top: -10px;
+				right: 5px;
+				width: 192px;
+				height: 80px;
+				background: url(../images/support.png);
+			}
+		}
+	}
+
+	.secure-payment-block {
+		margin-top: 15px;
+		border: 1px solid #d8d8d8;
+		border-radius: 5px;
+
+		.head-secure-payment {
+			padding-top: 11px;
+			padding-bottom: 8px;
+			border-radius: 4px;
+			border-bottom: 1px solid #d8d8d8;
+			box-sizing: border-box;
+			background: -webkit-linear-gradient(90deg, #f7f7f7 0%, #ffffff 100%);
+			background: -moz-linear-gradient(90deg, #f7f7f7 0%, #ffffff 100%);
+			background: -o-linear-gradient(90deg, #f7f7f7 0%, #ffffff 100%);
+			background: -ms-linear-gradient(90deg, #f7f7f7 0%, #ffffff 100%);
+			background: linear-gradient(0deg, #f7f7f7 0%, #ffffff 100%);
+			box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.05);
+			margin-bottom: 20px;
+		}
+
+		.title-secure-payment {
+			text-align: center;
+			position: relative;
+
+			&:before {
+				@extend %before-after-element;
+				top: 1px;
+				left: 9px;
+				width: 16px;
+				height: 13px;
+				background: url(../images/tick.png);
+			}
+		}
+
+		.main-part-secure-payment {
+			background: url(../images/lock.png) center center;
+			padding-top: 115px;
+			padding-bottom: 17px;
+			padding-left: 15px;
+		}
+	}
+}
+
+.footer.main-footer {
+	margin-top: 36px;
+}
+
+.first-part-footer {
+	background: #f7f7f7;
+	padding-top: 30px;
+	border-top: 1px solid #d8d8d8;
+
+	.menu-and-btn {
+		float: right;
+		padding-bottom: 30px;
+
+		.btn,
+		.footer-menu {
+			@extend %inline-block;
+		}
+
+		.btn {
+			margin-top: -5px;
+		}
+	}
+
+	.payment-systems-block {
+		clear: both;
+		padding-top:20px;
+		margin-top: 60px;
+		padding-bottom: 20px;
+		border-top: 1px solid #e6e6e6;
+		border-bottom: 1px solid #e6e6e6;
+		-webkit-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,1),0px 1px 1px 0px rgba(255,255,255,1);;
+		-moz-box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,1),0px 1px 1px 0px rgba(255,255,255,1);;
+		box-shadow: inset 0px 1px 1px 0px rgba(255,255,255,1),0px 1px 1px 0px rgba(255,255,255,1);;
+	}
+
+	article.xs-grey-text {
+		margin-top: 27px;
+		padding-bottom: 30px;
+	}
+}
+
+.second-part-footer {
+	background: -moz-linear-gradient(top, #ededed,#dbdbdb);
+	background: -webkit-linear-gradient(top, #ededed,#dbdbdb);
+	background: -o-linear-gradient(top, #ededed,#dbdbdb);
+	background: -ms-linear-gradient(top, #ededed,#dbdbdb);
+	background: linear-gradient(top, #ededed,#dbdbdb);
+	padding-top: 35px;
+	padding-bottom: 30px;
+
+	img,article {
+		@extend %inline-block;
+	}
+
+	article {
+		margin-left: 60px;
+		width: 732px;
+	}
+}

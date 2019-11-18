@@ -1,0 +1,54 @@
+.leroy-merlin-block
+	background: $whiteColor
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1)
+	height: 200px
+	padding-top: 10px
+	padding-left: 10px
+	padding-bottom: 20px
+
+	.merlin-logo,
+	.merlin-information,
+	.merlin-contacts
+		@extend %inline-block
+
+	.merlin-information,
+	.merlin-contacts
+		margin-top: 10px
+
+	.merlin-information
+		margin-left: 30px
+		width: 350px
+		.bg-black-text-regular
+			margin-top: 8px
+		.md-grey-text-bold
+			margin-top: 14px
+
+	.merlin-contacts
+		text-align: right
+		margin-left: 141px
+		width: 191px
+		.email
+			margin-top: 10px
+			&:hover
+				border-bottom: none
+		.city
+			margin-top: 20px
+		.link-shops
+			margin-top: 5px
+			&:hover
+				color: #fbc02d
+				border-bottom: none
+			&:active
+				color: $activeBgBtn
+				border-bottom: 1px solid $activeBgBtn
+	button
+		margin-right: 12px
+		margin-top: 15px
+
+	button
+		float: right
+
+.goods-table-leroy-block
+	margin-top: 20px
+	thead
+		text-align: left

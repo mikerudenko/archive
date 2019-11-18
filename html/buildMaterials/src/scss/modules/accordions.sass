@@ -1,0 +1,195 @@
+%inline-block
+	display: inline-block
+	vertical-align: top
+
+.accordion
+	@extend %inline-block
+	overflow: hidden
+	width: 465px
+	border-left: 1px solid $greyBorderMenuItem
+	&:first-child
+		margin-left: 1px
+	.bg-text-black-thin
+		cursor: pointer
+		position: relative
+		background: sprite($icons-arrows-menu, blackArrowDown) $whiteColor
+		width: 465px !important
+		height: 100px !important
+		line-height: 100px
+		padding-left: 100px
+		box-sizing: border-box
+		border:
+			bottom: 1px solid $greyBorderMenuItem
+			top: 1px solid $greyBorderMenuItem
+		margin-top: -1px
+		background-position: 425px 45px
+		background-repeat: no-repeat !important
+		@include sprite-dimensions($icons-arrows-menu, blackArrowDown)
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			width: 72px
+			height: 72px
+			top: 15px
+			left: 15px
+
+		&:hover
+			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2)
+			position: relative
+			z-index: 5
+			background: sprite($icons-arrows-menu, blackArrowDownHover) $whiteColor
+			@include sprite-dimensions($icons-arrows-menu, blackArrowDownHover)
+			background-position: 425px -19px
+			color: $hoverYellowItemMenu
+			font-weight: 400
+			text-decoration: underline
+		span.text
+			display: block
+			margin-top: 40px
+			height: 20px
+			width: 260px
+			line-height: 20px
+			padding:
+				bottom: 1px
+
+
+.title-blade
+	&:before
+		background: sprite($icons-menu, blade)
+		@include sprite-dimensions($icons-menu, blade)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, bladeH)
+			@include sprite-dimensions($icons-menu-hover, bladeH)
+
+.title-brick
+	&:before
+		background: sprite($icons-menu, brick)
+		@include sprite-dimensions($icons-menu, brick)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, brickH)
+			@include sprite-dimensions($icons-menu-hover, brickH)
+
+
+.title-roof
+	&:before
+		background: sprite($icons-menu, roof)
+		@include sprite-dimensions($icons-menu, roof)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, roofH) !important
+			@include sprite-dimensions($icons-menu-hover, roofH)
+
+.title-isolation
+	&:before
+		background: sprite($icons-menu, isolation)
+		@include sprite-dimensions($icons-menu, isolation)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, isolationH)
+			@include sprite-dimensions($icons-menu-hover, isolationH)
+
+.title-waterTap
+	&:before
+		background: sprite($icons-menu, waterTap)
+		@include sprite-dimensions($icons-menu, waterTap)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, waterTapH)
+			@include sprite-dimensions($icons-menu-hover, waterTapH)
+
+.title-sand
+	&:before
+		background: sprite($icons-menu, sand)
+		@include sprite-dimensions($icons-menu, sand)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, sandH)
+			@include sprite-dimensions($icons-menu-hover, sandH)
+
+.title-tile
+	&:before
+		background: sprite($icons-menu, tile)
+		@include sprite-dimensions($icons-menu, tile)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, tileH)
+			@include sprite-dimensions($icons-menu-hover, tileH)
+
+.title-pine
+	&:before
+		background: sprite($icons-menu, pine)
+		@include sprite-dimensions($icons-menu, pine)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, pineH)
+			@include sprite-dimensions($icons-menu-hover, pineH)
+
+.title-nail
+	&:before
+		background: sprite($icons-menu, nail)
+		@include sprite-dimensions($icons-menu, nail)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, nailH)
+			@include sprite-dimensions($icons-menu-hover, nailH)
+
+.title-lamp
+	&:before
+		background: sprite($icons-menu, lamp)
+		@include sprite-dimensions($icons-menu, lamp)
+	&:hover
+		&:before
+			background: sprite($icons-menu-hover, lampH)
+			@include sprite-dimensions($icons-menu-hover, lampH)
+
+ul.menu-acrd
+	background: $colorThead
+	padding:
+		top: 7px
+		left: 100px
+		bottom: 15px
+	box-sizing: border-box
+	a
+		display: block
+		margin-top: 10px !important
+		text-decoration: underline
+		&:first-child
+			margin-top: 0
+		&:hover
+			text-decoration: none
+
+.acrd-content
+	height: 284px
+
+.ui-state-focus,
+.ui-accordion-header
+	outline: none
+
+
+.bg-text-black-thin.ui-accordion-header-active
+	font-family: 'robotoregular'
+	color:  #000000
+	font-size: 18px
+	font-weight: 400
+	text-decoration: none !important
+	background: sprite($icons-arrows-menu, blackArrowUp) $whiteColor
+	@include sprite-dimensions($icons-arrows-menu, blackArrowUp)
+	background-position: 425px -82px
+	&:hover
+		z-index: 0
+		box-shadow: none
+		background: sprite($icons-arrows-menu, blackArrowUp) $whiteColor
+		@include sprite-dimensions($icons-arrows-menu, blackArrowUp)
+		background-position: 425px -82px
+		font-family: 'robotoregular' !important
+		color:  #000000 !important
+		font-size: 18px !important
+		font-weight: 400 !important
+		text-decoration: none !important
+
+
+.advertising-img
+	margin-top: 20px

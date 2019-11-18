@@ -1,0 +1,140 @@
+/**
+*Created by Balion 28.03.15
+*Last modify 29.03.15
+*/
+
+//MENU OF CSS CODE
+
+/*
+* 1.Header
+* 2.First block & Slider
+* 3.Block with articles
+* 4.Footer & Contact us button
+*/
+
+@media screen and (max-width: 650px) {
+
+//Header
+	.header-wrapper {
+		min-width: 450px;
+	}
+
+	.main-header {
+		width: 450px;
+	}
+
+	.select-lang {
+		left: -80px;
+	}
+
+	.second-level-nav-list {
+		height: 650px;
+		min-width: 440px;
+	}
+
+//First block & Slider
+	.first-block-wrapper {
+		min-width:450px;
+	}
+
+	.first-block {
+		width: 450px;
+
+		.main-title {
+			font-size: 18px;
+			width: 450px;
+		}
+
+		.sub-title {
+			font-size: 15px;
+			width: 450px;
+		}
+	}
+
+	.our-products-title-block {
+		margin-top: 50px;
+	}
+
+
+	.our-products-title-block {
+		.line {
+			display: none;
+		}
+	}
+
+	.slider-block {
+		width: 360px;
+	}
+
+//Block with articles
+
+	.block-with-articles {
+		width: 440px;
+
+		.orange-title {
+			width: 440px;
+
+			&:before {
+				left:7px;
+			}
+
+			&:after {
+				display:none;
+			}
+		}
+
+		.white-title {
+			background: white;
+			display:block;
+		}
+	}
+
+	.articles {
+		width: 440px;
+
+		.left-articles,
+		.right-articles {
+				width: 440px;
+			}
+	}
+
+//Footer & Contact us button
+
+	.main-footer,
+	.top-part-footer-wrapper {
+		min-width: 450px;
+	}
+
+	.top-part-footer-wrapper{
+		padding-bottom: 10px;
+	}
+
+	.top-part-footer,
+	.bottom-part-footer {
+		width: 450px;
+	}
+
+	.top-part-footer {
+
+		ul {
+			width: 450px;
+			li {
+				display: block;
+				margin: 10px auto !important;
+			}
+		}
+
+		.facebook-wrapper {
+			display: none;
+		}
+	}
+	.bottom-part-footer {
+		* {
+			text-align: center;
+		}
+	}
+
+	.contact-us-fixed-button {
+		top: 300px;
+	}
+}

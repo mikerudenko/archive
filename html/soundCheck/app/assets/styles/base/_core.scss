@@ -1,0 +1,238 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+@media print {
+  * {
+    background: none !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+
+    /* Images, vectors and such */
+    filter: Gray();
+    filter: url('desaturate.svg#grayscale');
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+  }
+
+  a {
+    text-decoration: underline;
+    page-break-inside:avoid;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  a:link,
+  a:visited {
+    color: #781351
+  }
+
+  a[href="#"],
+  a[href="javascript:"] {
+    content: "";
+  }
+
+  p {
+    font-size: 12pt;
+  }
+
+  body {
+    font-family: Georgia, ‘Times New Roman’, serif;
+  }
+
+  #comments {
+    page-break-before: always;
+  }
+
+  #header-widgets, nav, aside.mashsb-container,
+  .sidebar, .mashshare-top, .mashshare-bottom,
+  .content-ads, .make-comment, .author-bio,
+  .heading, .related-posts, #decomments-form-add-comment,
+  #breadcrumbs, #footer, .post-byline, .meta-single,
+  .site-title img, .post-tags, .readability {
+    display: none;
+  }
+
+  .entry iframe, ins {
+    display: none;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    line-height: 0pt !important;
+    white-space: nowrap;
+  }
+
+  @page :left {
+    margin: 1cm;
+  }
+
+  @page :right {
+    margin: 1cm;
+  }
+
+  /* The first page of a print can be manipulated as well */
+  @page :first {
+    margin: 1cm 2cm;
+  }
+
+  // You need to convert pixels in points
+  /*
+    Pixels => Points
+    6px => 5pt
+    7px => 5pt
+    8px => 6pt
+    9px => 7pt
+    10px => 8pt
+    11px => 8pt
+    12px => 9pt
+    13px => 10pt
+    14px => 11pt
+    15px => 11pt
+    16px => 12pt
+    17px => 13pt
+    18px => 14pt
+    19px => 14pt
+    20px => 15pt
+    21px => 16pt
+    22px => 17pt
+    23px => 17pt
+    24px => 18pt
+    A font size of 12pt has proven to be best.
+  */
+
+  .embed-youtube,
+  .embed-responsive {
+    position: absolute;
+    height: 0;
+    overflow: hidden;
+  }
+
+
+  blockquote {
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5, h6,img {
+    page-break-after:avoid;
+    page-break-inside:avoid;
+  }
+
+  table, pre,ul, ol, dl {
+    page-break-inside:avoid;
+  }
+}
+
+
+
+//Reset Css
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5,
+h6, p, blockquote, pre,a, abbr, acronym, address, big,
+cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small,
+strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt,
+dd, ol, ul, li,fieldset, form, label, legend,table, caption,
+tbody, tfoot, thead, tr, th, td,article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary,time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body, html {
+  height: auto;
+}
+
+img,fieldset, a img {
+  border: none;
+}
+
+input[type="submit"],
+button {
+  cursor: pointer;
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+}
+
+textarea {
+  overflow: auto;
+}
+
+input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+input, textarea, select,button,
+h1,h2,h3,h4,h5,h6,span{
+  @extend %outline-none;
+}
+
+ul,ol {
+  list-style-type: none;
+}
+// End of reset Css
+
+
+
+// Sizing
+$container-width: 1024px;
+$container-width-sm: 320px;
+
+//Fonts definitions
+@font-face {
+  font-family: "SegoeUI";
+  src: url("/assets/fonts/SegoeUILight.eot");
+  src: url("/assets/fonts/SegoeUILight.eot?#iefix")format("embedded-opentype"),
+  url("/assets/fonts/SegoeUILight.woff") format("woff"),
+  url("/assets/fonts/SegoeUILight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "SegoeUI";
+  src: url("/assets/fonts/SegoeUIRegular.eot");
+  src: url("/assets/fonts/SegoeUIRegular.eot?#iefix")format("embedded-opentype"),
+  url("/assets/fonts/SegoeUIRegular.woff") format("woff"),
+  url("/assets/fonts/SegoeUIRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+%segoe-light {
+  font-family: 'SegoeUI', Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+%segoe-reg {
+  font-family: 'SegoeUI', Helvetica, sans-serif;
+  font-weight: 300;
+}
+
+$base-font-size: 1rem;
+$base-line-height: 1.6;
+
+//Colors
+$top-line-color: #212121;
+$salat-color: #14dcab;

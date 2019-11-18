@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="assets/index.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- Meta tags for seo optimization -->
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="copyright" content="All rights reserved. This is site for Web subject" />
+    <meta name="description" content="This is site about rest services when you have holidays" />
+    <meta name="keywords" content="services, holidays, trip, weekend, toor" />
+    <meta name="robots" content="index, follow" />
+    <meta name="distribution" content="web" />
+
+    <!-- bower:css -->
+    <!-- endbower -->
+    <title>Share your holiday dreams</title>
+</head>
+<body ng-app="App">
+
+<!--header view-->
+<header class="shop-container-fluid header">
+    <div class="shop-container shop-container-header">
+        <div class="header-top-line">
+            <img src="assets/images/logo-header.png" alt="This is header logo" class="header-logo">
+            <ul class="header-navigation" role="navigation">
+                <li ui-sref="home" rel="link"><a href="home.html">Home</a></li>
+                <li ui-sref="services" rel="link"><a href="services.html">Services</a></li>
+                <li ui-sref="about" rel="link"><a href="about.html">About Us</a></li>
+            </ul>
+            <div itemscope itemtype="http://schema.org/Person" class="header-info-block" role="list">
+                <div class="header-info-item" itemprop="phone">+38 (099) 999-99-99</div>
+                <div class="header-info-item" itemprop="phone">+38 (099) 999-99-99</div>
+                <div class="header-info-item" itemprop="email">someexample@gmail.com</div>
+            </div>
+        </div>
+
+        <div class="header-main-part">
+            <h1>Share your holiday dreams</h1>
+            <div class="shop-btn shop-btn-primary">Find your holiday partner</div>
+        </div>
+    </div>
+</header>
+
+<!--Content part-->
+<div class="shop-container service-explanation-section">
+    <div class="shop-section-title">How Urlaubsglück </div>
+    <div class="service-explanation-item">
+        <div class="shop-label shop-label-primary">Step 1</div>
+        <div class="service-explanation-item-title">Sed leo enim,condimentum</div>
+        <div class="service-explanation-item-description">Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</div>
+    </div>
+    <div class="service-explanation-item">
+        <div class="shop-label shop-label-primary">Step 2</div>
+        <div class="service-explanation-item-title">Morbi velit risus</div>
+        <div class="service-explanation-item-description">Nulla venenatis tempor dui in molestie. Nulla quis dictum purus, sit amet porttitor est</div>
+    </div>
+    <div class="service-explanation-item">
+        <div class="shop-label shop-label-primary">Step 3</div>
+        <div class="service-explanation-item-title">Sed leo enim, condimentum</div>
+        <div class="service-explanation-item-description">Quisque libero libero, dictum non turpis in, luctus semper lorem. Donec rhoncus a leo sit amet facilisis.</div>
+    </div>
+</div>
+<div class="shop-container testimonials-section">
+    <div class="shop-section-title">Testimonials </div>
+    <div class="testimonials-items-block">
+        <div class="testimonials-item">
+            <img src="assets/images/testimonial1.png" alt="">
+            <div class="testimonials-item-name">Bradley Hunter</div>
+            <div class="testimonials-item-text">Based in Chicago. I love playing tennis and loud music.</div>
+        </div>
+        <div class="testimonials-item">
+            <img src="assets/images/testimonial2.png" alt="">
+            <div class="testimonials-item-name">Heather Walker</div>
+            <div class="testimonials-item-text">I'm a happy person that loves cats and climbing on mountains</div>
+        </div>
+        <div class="testimonials-item">
+            <img src="assets/images/testimonial3.png" alt="">
+            <div class="testimonials-item-name">Lucas Marsha</div>
+            <div class="testimonials-item-text">I get my inspiration from nature and objects around me. I have a passion to colours, typography and skateboards.</div>
+        </div>
+        <div class="testimonials-item">
+            <img src="assets/images/testimonial4.png" alt="">
+            <div class="testimonials-item-name">Bradley Hunter</div>
+            <div class="testimonials-item-text">Based in Chicago. I love playing tennis and loud music.</div>
+        </div>
+    </div>
+    <div class="shop-btn shop-btn-default">Find other partner</div>
+</div>
+
+<!--footer view-->
+<footer class="shop-container-fluid footer">
+    <div class="shop-container">
+        <div class="footer-top-line">
+            <img src="assets/images/logo-footer.png" alt="This is footer logo" class="footer-logo">
+            <ul class="footer-navigation">
+                <li rel="link"><a href="home.html">Home</a></li>
+                <li rel="link"><a href="services.html">Services</a></li>
+                <li rel="link"><a href="about.html">About Us</a></li>
+            </ul>
+            <div class="footer-social-section">
+                <div class="footer-item-social facebook"></div>
+                <div class="footer-item-social twitter"></div>
+                <div class="footer-item-social google-plus"></div>
+                <div class="footer-item-social youtube"></div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-part" role="contentinfo">
+            <div class="footer-location-block">
+                Location:
+                <br>
+                1600 Amphitheatre Parkway Mountain View, CA <strong>94043</strong>
+            </div>
+            <div itemscope itemtype="http://schema.org/Person" class="footer-info-block" role="list">
+                <div class="footer-info-item" itemprop="phone">+38 (099) 999-99-99</div>
+                <div class="footer-info-item" itemprop="phone">+38 (099) 999-99-99</div>
+                <div class="footer-info-item" itemprop="email">someexample@gmail.com</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<!-- endbower -->
+
+<script src="all.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+.main-footer
+	padding-top: 30px
+	padding-bottom: 20px
+	background: $footerBg
+
+.footer-menu-title,
+.phones-and-time-work,
+.social-btns-block
+	@extend %inline-block
+
+.fm1
+	width: 130px
+
+.fm2
+	width: 210px
+	margin-left: 95px
+
+.footer-menu
+	li:hover
+		a
+			color: $hoverFooterMenu
+			border-bottom: none
+	li:active
+		a
+			color: $blackColor
+			border-bottom: none
+
+
+.phones-and-time-work
+	margin-left: 30px
+	.phone
+		margin-top: 15px
+		&:first-child
+			margin-top: 0
+		span
+			margin-left: 5px
+	.time-work
+		margin-top: 20px
+	.days-work
+		margin-top: 10px
+
+.social-btns-block
+	margin-left: 30px
+	.btns-social
+		margin-top: 15px
+		a
+			width: 30px
+			height: 30px
+			margin-left: 12px
+			text-align: center
+			box-sizing: border-box
+			line-height: 30px
+			color: $blueColorIcons
+			border-radius: 50%
+			display: inline-block
+			border: 1px solid $blueColorIcons !important
+			&:first-child
+				margin-left: 0
+			&:hover
+				color: $blueColorIconsHover
+				border: 1px solid $blueColorIconsHover !important
+			&:active
+				color: $blueColorIconsActive
+				border: 1px solid $blueColorIconsActive !important

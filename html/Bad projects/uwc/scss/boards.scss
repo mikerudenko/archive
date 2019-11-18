@@ -1,0 +1,194 @@
+/**
+*Created by Balion 28.03.15
+*Last modify 29.03.15
+*/
+
+//MENU OF CSS CODE
+
+/*
+* 1.Header
+* 2.First block & Slider
+* 3.Block with articles
+* 4.Footer & Contact us button
+*/
+
+@media screen and (max-width: 1180px) {
+
+//Header
+
+	.header-wrapper {
+		min-width: 650px;
+	}
+
+	.main-header {
+		height: 75px;
+		text-align: center;
+		width: 650px;
+
+		img,
+		ul,
+		ul li {
+			display: block;
+			margin:0 auto;
+		}
+
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	.first-level-list {
+		margin:30px auto 0 !important;
+		width: inherit;
+	}
+
+	.select-lang {
+		border-bottom: 1px solid #ddd;
+		position: absolute;
+		right: 80px;
+		top: 0;
+	}
+
+	.second-level-nav-list {
+		height: 400px;
+		min-width: 640px;
+		li {
+			display: inline-block !important;
+			margin-left: 40px  !important;
+			text-align: center;
+			width: 117px;
+		}
+	}
+
+	.open-menu-button {
+		cursor: pointer;
+		height: 40px;
+		position: fixed;
+		right: 20px;
+		top: 20px;
+		visibility: visible;
+		width: 40px;
+
+		div{
+			background: #BBBBBB;
+			height: 5px;
+			margin-top: 3px;
+			width: inherit;
+		}
+	}
+
+//First block & Slider
+
+	.first-block-wrapper {
+		min-width:640px;
+	}
+
+	.first-block {
+		width: 600px;
+
+		.main-title {
+			font-size: 25px;
+			width: 570px;
+		}
+
+		.sub-title {
+			font-size: 18px;
+			width: 500px;
+		}
+	}
+
+	.our-products-title-block {
+		margin-top: 100px;
+	}
+
+	.first-block-menu {
+		margin: 20px auto 10px;
+
+		li {
+			font-size: 10px;
+			margin-top: 1px;
+			width: 150px;
+		}
+	}
+
+	.our-products-title-block {
+		.line {
+			width: 200px;
+		}
+	}
+	
+	.slider-block {
+		width: 650px;
+	}
+
+//Block with articles
+
+	.block-with-articles {
+		font-size: 12px;
+		width: 650px;
+
+		.orange-title {
+			font-size: 12px;
+			padding-left: 5px;
+			width: 330px;
+
+			&:before {
+				left:2px;
+			}
+		}
+
+		.white-title {
+			font-size: 12px;
+			width: 315px;
+		}
+	}
+
+	.articles {
+		width: 650px;
+
+		.left-articles,
+		.right-articles {
+				display: block;
+				margin: 0 auto;
+				width: 525px;
+			}
+
+		.right-articles {
+			margin: 40px auto 0;
+		}
+
+		.title-article {
+			font-size: 17px;
+		}
+	}
+
+//Footer & Contact us button
+
+	.main-footer,
+	.top-part-footer-wrapper {
+		min-width: 650px;
+	}
+
+	.top-part-footer,
+	.bottom-part-footer {
+		width: 650px;
+	}
+
+	.top-part-footer {
+		text-align: center;
+
+		.text-logo-becker {
+			display: block;
+			margin: 15px auto;
+		}
+
+		ul {
+			display: block;
+			margin: 20px auto 0;
+		}
+	}
+
+	.contact-us-fixed-button {
+		top: 300px;
+	}
+}

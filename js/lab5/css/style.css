@@ -1,0 +1,71 @@
+body {
+	background: white;
+}
+
+table {
+	width: 700px;
+	margin:50px auto 0;
+}
+
+table tr td {
+	width: 200px;
+	padding:15px;
+	border:1px solid brown;
+	text-align: center;
+	background: #998FDC;
+}
+
+.ct-chart,
+.ct-chart2,
+.ct-chart3 {
+	width: 700px;
+	height: 700px;
+	margin:50px auto 0;
+	padding: 20px;
+	background: rgba(2, 22, 124, 0.43);
+}
+
+
+.ct-chart2,
+.ct-chart3,
+.ct-chart21 {
+	width:1700px;
+	height: 1000px;
+
+}
+
+.ct-chart .ct-grid {
+	stroke: white;
+}
+
+
+
+table tr td:first-child {
+	background: #3D83CA;
+}
+
+table tr td:nth-child(2),
+table tr td:nth-child(3) {
+	background: #F5C623;
+}
+
+table tr td:nth-child(4),
+table tr td:nth-child(5) {
+	background: #D96701;
+}
+
+table tr:first-child td {
+	background:#C5CBD5;;
+}
+
+#cha {
+	width:1000px;
+	height:700px;
+	margin:40px auto;
+	display:block;
+}
+
+h1,h2 {
+	width: 1024px;
+	margin: 40px auto 20px;
+}

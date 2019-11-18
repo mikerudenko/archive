@@ -1,0 +1,31 @@
+ul.top-menu-block
+	margin-left: 30px
+	li
+		@extend %inline-block
+		margin-right: 30px
+		&:last-child
+			margin-right: 0
+
+ul.footer-menu
+	margin-top: 10px
+	li
+		margin-top: 10px
+
+
+.chain-menu
+	*
+		@extend %inline-block
+		position: relative
+	.sm-text-regular-grey
+		margin-right: 20px
+		padding-bottom: 1px
+		border-bottom: 1px solid $chainMenuTextDarkGrey
+		&:after
+			content: ''
+			display: block
+			width: 6px
+			height: 10px
+			position: absolute
+			top: 6px
+			right: -14px
+			background: url(../images/arrowRight.png)

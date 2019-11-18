@@ -1,0 +1,394 @@
+/*Font*/
+@font-face {
+	font-family: 'FedraSansPro-Normal';
+	src: url('../fonts/FedraSansPro-Normal.eot');
+	src: url('../fonts/FedraSansPro-Normal.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/FedraSansPro-Normal.woff2') format('woff2'),
+		 url('../fonts/FedraSansPro-Normal.woff') format('woff'),
+		 url('../fonts/FedraSansPro-Normal.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FedraSansPro-Book';
+	src: url('../fonts/FedraSansPro-Book.eot');
+	src: url('../fonts/FedraSansPro-Book.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/FedraSansPro-Book.woff2') format('woff2'),
+		 url('../fonts/FedraSansPro-Book.woff') format('woff'),
+		 url('../fonts/FedraSansPro-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'FedraSansPro-Medium';
+	src: url('../fonts/FedraSansPro-Medium.eot');
+	src: url('../fonts/FedraSansPro-Medium.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/FedraSansPro-Medium.woff2') format('woff2'),
+		 url('../fonts/FedraSansPro-Medium.woff') format('woff'),
+		 url('../fonts/FedraSansPro-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+/*Font*/
+
+/*Header*/
+header {
+	background: #281711;
+	min-width: 1336px;
+	height: 140px;
+}
+
+.logo{
+	width: 164px;
+	height: 108px;
+	background: url(../img/logo.png);
+}
+.content-header{
+	width: 1336px;
+	margin:0 auto;
+}
+.content-header * {
+	vertical-align: top;
+	display: inline-block;
+}
+.central-block {
+	padding-left:65px;
+	padding-top: 36px;
+	color: white;
+}
+
+.tel {
+	font-family: 'FedraSansPro-Normal';
+	font-size: 18px;
+	position: relative;
+}
+
+.tel:before{
+	content:'';
+	width: 20px;
+	height: 22px;
+	display: block;
+	position: absolute;
+	top: -2px;
+	left: -21px;
+	background:url(../img/phone.png);
+}
+
+.call-menu-header li{
+	margin-left: 32px;
+	cursor: pointer;
+	font-family: Tahoma;
+	font-size: 14px;
+}
+
+.call-menu-header li:nth-last-child(n+3){
+	border-bottom:1px dashed white;
+}
+
+.main-menu{
+	margin-top: 38px;
+	margin-left:-47px;
+}
+
+.main-menu li {
+	text-transform: uppercase;
+	font-family: 'FedraSansPro-Normal';
+	cursor: pointer;
+	font-size: 18px;
+	margin-left: 30px;
+}
+
+.profile-and-search{
+	margin-left: 85px;
+	position: relative;
+	width: 278px;
+	padding-top:25px;
+}
+
+.search {
+	width: 302px;
+	border-radius: 7px;
+	height: 42px;
+	padding-top:10px;
+	box-sizing:border-box;
+	padding-left:17px;
+	background: #bfbab8;
+	font-family: 'FedraSansPro-Book';
+	font-size: 14px;
+	border:none;
+	color: #363636;
+}
+
+.search:focus{
+	outline:none;
+}
+
+.profile-and-search:after {
+	content:'';
+	width: 23px;
+	cursor: pointer;
+	height: 24px;
+	display: block;
+	position: absolute;
+	top: 38px;
+	right: -11px;
+	background:url(../img/search.jpg) top left no-repeat;
+}
+
+.profile {
+	margin-top: 30px;
+	color: white;
+	margin-left:40px;
+	font-family: Tahoma;
+	font-size: 14px;
+}
+
+.msg,
+.name,
+.close{
+	cursor: pointer;
+}
+
+.msg {
+	position: relative;
+}
+
+.msg:after {
+	content:'3';
+	width: 20px;
+	height: 20px;
+	background: #008088;
+	text-align: center;
+	line-height: 20px;
+	position: absolute;
+	top: -2px;
+	right: -25px;
+	border-radius: 50%;
+}
+
+.name{
+	margin-left: 35px;
+}
+/*Header*/
+
+/*Container*/
+.container {
+	width: 920px;
+	margin:45px auto 0;
+}
+
+.results-of-search {
+	font-family: 'FedraSansPro-Book';
+	font-size: 34px;
+}
+
+.results-of-search span {
+	color: #a1a1a1;
+}
+
+.container-search-pole{
+	width: 555px;
+	height: 45px;
+	padding-left: 18px;
+	border:1px solid #19b3b2;
+	border-radius: 3px;
+	font-family: 'FedraSansPro-Book';
+	font-size: 14px;
+	margin-top:35px;
+}
+
+.container-search-pole:focus{
+	outline: none;
+}
+
+.big-blue-button {
+	display: inline-block;
+	margin-left: 8px;
+	font-family: 'FedraSansPro-Normal';
+	font-size: 18px;
+	width: 110px;
+	height: 48px;
+	cursor: pointer;
+	text-align: center;
+	color: white;
+	vertical-align: bottom;
+	background: #19b3b2;;
+	line-height: 50px;
+	border-radius: 5px;
+}
+/*Container*/
+
+/*Block of articles*/
+.block-of-articles {
+	margin-top: 40px;
+
+}
+.block-of-articles article {
+	margin-top: 50px;
+}
+.title-of-article {
+	color: #0b8ee1;
+	font-family:Tahoma;
+	font-size:14px;
+}
+.title-of-article span {
+	font-weight: bold;
+	text-decoration: underline;
+}
+.main-text {
+	font-family:Tahoma;
+	margin-top:15px;
+	font-size:14px;
+	line-height: 20px;
+}
+/*Block of articles*/
+
+/*Page numbers*/
+.pagenation {
+  position: relative;
+  margin: 50px auto 50px;
+  padding: 0 20px;
+  width: 220px; }
+
+.pagenation:after {
+  display: table;
+  clear: both;
+  content: ''; }
+
+.pagenation_control {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.pagenation_control--prev {
+  left: 0;
+  width: 6px;
+  height: 11px;
+  background-image: url("../img/sprite.png");
+  background-position: -466px -80px; }
+
+.pagenation_control--next {
+  right: 0;
+  width: 6px;
+  height: 11px;
+  background-image: url("../img/sprite.png");
+  background-position: -469px -104px; }
+
+.pagenation_list {
+  text-align: center; }
+
+.pagenation_list:after {
+  display: table;
+  clear: both;
+  content: ''; }
+
+.pagenation_item {
+  display: inline-block; }
+
+.pagenation_link {
+  padding: 8px 9px;
+  display: inline-block;
+  font-family: Tahoma;
+  text-decoration: none;
+  color: #19b3b2;
+  border-radius: 5px; }
+
+.pagenation_link.current {
+  color: #fff;
+  background-color: #19b3b2; }
+/*Page numbers*/
+
+/*Footer*/
+footer {
+	background: #281711;
+	min-width: 1336px;
+	color: #e1dfde;
+	height: 240px;
+}
+.block-of-3-list {
+	display: inline-block;
+	vertical-align: top;
+
+}
+.content-footer{
+	width: 1336px;
+	margin: 0 auto;
+}
+.list-block-footer {
+	display: inline-block;
+}
+.list-block-footer li {
+	display: block;
+	margin-top: 15px;
+	cursor: pointer;
+	font-family: 'FedraSansPro-Book';
+	font-size: 12px;
+
+}
+.list-block-footer span {
+	border-bottom:1px solid #e1dfde;
+}
+.block-of-3-list {
+	padding-top: 24px;
+}
+.content-footer ul:first-child {
+	margin-left: 50px;
+}
+.content-footer ul:nth-child(n+2){
+	margin-left: 135px;
+}
+.content-footer ul:last-child {
+	margin-left: 217px;
+}
+.social-buttons {
+	margin-top: 40px;
+	margin-left: 310px;
+	font-family: 'FedraSansPro-Book';
+	font-size: 12px;
+	display:inline-block;
+	position: relative;
+}
+.social-buttons * {
+	display: inline-block;
+}
+.social-buttons img {
+	cursor: pointer;
+	position: absolute;
+}
+.social-button1 {
+	top: -15px;
+	right: -60px;
+}
+.social-button2 {
+	top: -14px;
+	right: -100px;
+}
+.copy {
+	margin-top: 62px;
+}
+.copy * {
+	display: inline-block;
+}
+.title-copy {
+	margin-left: 50px;
+	font-family: 'FedraSansPro-Book';
+	font-size: 11px;
+}
+.slogan{
+	margin-left: 600px;
+	font-family: 'FedraSansPro-Medium';
+	font-size: 14px;
+	position: relative;
+}
+.slogan:after{
+	content: '';
+	display: block;
+	width: 36px;
+	height: 37px;
+	background: url(../img/ball.png) top left no-repeat;
+	position: absolute;
+	top: -10px;
+	right: -65px;
+}
+/*Footer*/
