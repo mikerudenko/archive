@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "move-file": "^1.0.0",
-    "puppeteer": "^1.9.0"
+    "puppeteer": "^1.13.0"
   }
 }
