@@ -9,7 +9,7 @@
     "classnames": "^2.2.6",
     "connected-react-router": "^6.2.0",
     "history": "^4.7.2",
-    "immer": "^1.8.0",
+    "immer": "^8.0.1",
     "humps": "^2.0.1",
     "jwt-decode": "^2.2.0",
     "node-sass": "^4.11.0",
